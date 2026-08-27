@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>MIYAGI FAMILY TRIP 2026</title>
-<meta name="description" content="2026年10月2日〜4日 宮城家族旅行のしおり" />
+<meta name="description" content="2026年10月2日〜4日 <ruby>宮城<rt>みやぎ</rt></ruby>家族旅行のしおり" />
 <style>
 :root{
   --navy:#0d2740;
@@ -112,7 +112,7 @@ footer{text-align:center;padding:28px 20px 48px;color:#8b8f93;font-size:12px}
 .mag-photo.kanyo{background:linear-gradient(180deg,transparent 35%,rgba(5,25,39,.64)),linear-gradient(155deg,#bce4ee 0%,#5a9bb7 48%,#19425c 100%)}
 .mag-photo.kanyo:after{content:"";position:absolute;left:-5%;right:-5%;bottom:-12%;height:58%;background:radial-gradient(70% 90% at 15% 100%,#173c4d 0 45%,transparent 46%),radial-gradient(70% 90% at 78% 100%,#28596a 0 40%,transparent 41%);opacity:.85}
 .mag-photo.akiu{background:linear-gradient(145deg,#263f35,#6e8c75 38%,#c7a878 100%)}
-.mag-photo.akiu:after{content:"秋保温泉 · AKIU ONSEN";position:absolute;right:16px;top:16px;color:rgba(255,255,255,.8);font-size:10px;letter-spacing:.14em}
+.mag-photo.akiu:after{content:"<ruby>秋保<rt>あきう</rt></ruby><ruby>温泉<rt>おんせん</rt></ruby> · AKIU ONSEN";position:absolute;right:16px;top:16px;color:rgba(255,255,255,.8);font-size:10px;letter-spacing:.14em}
 .day{position:relative;overflow:hidden}.day:after{content:"";position:absolute;right:-24px;top:-24px;width:92px;height:92px;border-radius:50%;border:1px solid #eee4d4;opacity:.7}
 .day-theme{font-family:Georgia,"Yu Mincho",serif;font-size:16px;color:#475561}
 .hotel-card{overflow:hidden}
@@ -196,31 +196,63 @@ footer{text-align:center;padding:28px 20px 48px;color:#8b8f93;font-size:12px}
 @media(max-width:390px){.count-box strong{font-size:23px}.countdown-grid{gap:6px}}
 </style>
 
+
+<style>
+html,body{max-width:100%;overflow-x:hidden}
+section,.day-card,.hotel-card,.food-card,.story-card,.quest-wrap,.live-countdown{min-width:0;max-width:100%}
+.day-card *,.hotel-card *,.food-card *,.quest-wrap *{min-width:0;overflow-wrap:anywhere}
+.countdown-grid{max-width:100%}.count-box{min-width:0}.count-box strong{font-size:clamp(20px,7vw,30px)}
+.daily-adventure{margin:22px 16px 30px;padding:20px;border-radius:24px;background:linear-gradient(135deg,#fff7d9,#eef9ff);box-shadow:0 12px 30px rgba(25,48,68,.10);position:relative;overflow:hidden}
+.daily-adventure:after{content:'?';position:absolute;right:-4px;bottom:-33px;font-size:126px;font-weight:900;color:rgba(34,93,121,.06);line-height:1}
+.daily-kicker{font-size:11px;letter-spacing:.18em;color:#a77916;font-weight:900}.daily-title{font-size:22px;line-height:1.35;margin:6px 0 12px;color:#15354d}.daily-question{font-weight:800;font-size:16px;line-height:1.6;position:relative;z-index:1}.daily-answer{display:none;margin-top:12px;padding:12px 14px;border-radius:14px;background:#fff;color:#315d7c;font-weight:800}.daily-answer.show{display:block;animation:fadeIn .3s ease}.daily-btn{margin-top:14px;border:0;border-radius:999px;padding:10px 16px;background:#173b56;color:#fff;font-weight:800;font-size:13px;position:relative;z-index:1}.daily-sub{font-size:12px;color:#6c7680;margin-top:8px}
+.quest-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.quest-badge{padding:11px 5px;border-radius:16px;background:rgba(255,255,255,.7);text-align:center;filter:grayscale(1);opacity:.45;transition:.3s}.quest-badge.unlocked{filter:none;opacity:1;background:#fff;box-shadow:0 5px 14px rgba(20,52,78,.08)}.quest-badge b{display:block;font-size:24px}.quest-badge span{display:block;font-size:9px;font-weight:900;letter-spacing:.04em;line-height:1.3;margin-top:4px}
+.quest-section-no{display:inline-flex;width:42px;height:42px;border-radius:50%;align-items:center;justify-content:center;background:#15354d;color:#fff;font-size:12px;font-weight:900;margin-bottom:10px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(max-width:390px){.daily-adventure,.quest-wrap{margin-left:12px;margin-right:12px}.quest-title{font-size:22px}.mission-card{padding:12px}.mission-card .micon{font-size:26px;min-width:32px}}
+</style>
+
+<style>
+ruby{ruby-position:over}
+rt{font-size:.52em;font-weight:600;letter-spacing:.02em;color:#6f7d86}
+.kids-easy{font-size:14px;line-height:1.8}
+</style>
+
+
+<style>
+html,body{max-width:100%;overflow-x:hidden}
+*{box-sizing:border-box}
+img,svg,video{max-width:100%;height:auto}
+button,a,.mission-card{overflow-wrap:anywhere}
+@media(max-width:430px){
+  rt{font-size:.48em}
+  .quest-title{font-size:23px}
+  .mission-card strong{font-size:14px;line-height:1.45}
+  .mission-card small{font-size:12px}
+}
+</style>
+
 </head>
 <body>
 <div style="margin:18px 16px;padding:12px 14px;border-radius:14px;background:#f5f7f8;color:#59666f;font-size:12px;line-height:1.6">
   🔒 公開版のため、ホテル予約番号などの個人用予約情報は掲載していません。
 </div>
-
-<section class="live-countdown" aria-label="旅行までのカウントダウン">
-  <div class="countdown-label">COUNTDOWN TO MIYAGI</div>
-  <div class="countdown-title">宮城旅行まで、あと</div>
-  <div class="countdown-grid">
-    <div class="count-box"><strong id="cdDays">--</strong><span>DAYS</span></div>
-    <div class="count-box"><strong id="cdHours">--</strong><span>HOURS</span></div>
-    <div class="count-box"><strong id="cdMinutes">--</strong><span>MIN</span></div>
-    <div class="count-box"><strong id="cdSeconds">--</strong><span>SEC</span></div>
-  </div>
-  <div id="countdownFallback" class="countdown-fallback">2026.10.2 START</div>
+<section class="daily-adventure" id="dailyAdventure">
+  <div class="daily-kicker">TODAY'S SECRET · 毎日かわる</div>
+  <h2 class="daily-title">きょうの<ruby>宮城<rt>みやぎ</rt></ruby>クイズ</h2>
+  <div class="daily-question" id="dailyQuestion">もんだいをえらんでいるよ…</div>
+  <button class="daily-btn" id="dailyReveal" type="button">こたえを見る 👀</button>
+  <div class="daily-answer" id="dailyAnswer"></div>
+  <div class="daily-sub">あした見ると、ちがうもんだいが出るかも！</div>
 </section>
+
 
 <header class="hero" id="top">
   <div class="miyagi-motif" aria-hidden="true"><div class="miyagi-moon"></div><div class="tanabata"><i></i><i></i><i></i></div><div class="miyagi-islands"></div><div class="pine"></div></div>
   <div class="hero-stamp">FAMILY<br>TRIP<br>2026</div><div class="hero-inner">
     <div class="kicker">MIYAGI FAMILY TRIP</div>
-    <h1>宮城、<br>家族の旅。</h1>
-    <div class="sub">2026.10.2 FRI ─ 10.4 SUN</div><div style="margin-top:10px;font-family:serif;font-size:18px;letter-spacing:.08em">温泉、海、そして家族の記憶。</div>
-    <div class="route">秋保 ─ 南三陸 ─ 気仙沼</div><div class="hero-copyline">松島の海、伊達の三日月、秋保の湯。宮城をめぐる3日間。</div><div class="hero-destinations"><span>♨ AKIU</span><span>🌊 SANRIKU</span><span>🐟 KESENNUMA</span><span>🌿 MIYAGI</span></div><div class="hero-badge">FAMILY TRAVEL MAGAZINE · 03 DAYS</div>
+    <h1><ruby>宮城<rt>みやぎ</rt></ruby>、<br>家族の旅。</h1>
+    <div class="sub">2026.10.2 FRI ─ 10.4 SUN</div><div style="margin-top:10px;font-family:serif;font-size:18px;letter-spacing:.08em"><ruby>温泉<rt>おんせん</rt></ruby>、海、そして家族の記憶。</div>
+    <div class="route"><ruby>秋保<rt>あきう</rt></ruby> ─ <ruby>南三陸<rt>みなみさんりく</rt></ruby> ─ <ruby>気仙沼<rt>けせんぬま</rt></ruby></div><div class="hero-copyline"><ruby>松島<rt>まつしま</rt></ruby>の海、伊達の三日月、<ruby>秋保<rt>あきう</rt></ruby>の湯。<ruby>宮城<rt>みやぎ</rt></ruby>をめぐる3日間。</div><div class="hero-destinations"><span>♨ AKIU</span><span>🌊 SANRIKU</span><span>🐟 KESENNUMA</span><span>🌿 MIYAGI</span></div><div class="hero-badge">FAMILY TRAVEL MAGAZINE · 03 DAYS</div>
   </div>
   <div class="countdown">
     <div class="countdown-title">COUNTDOWN TO OUR TRIP</div>
@@ -233,81 +265,83 @@ footer{text-align:center;padding:28px 20px 48px;color:#8b8f93;font-size:12px}
   </div>
 </header>
 <nav>
-  <a href="#schedule">SCHEDULE</a><a href="#hotel">HOTEL</a><a href="#mission">MISSION</a><a href="#gourmet">GOURMET</a><a href="#map">MAP</a><a href="#info">INFO</a>
+  <a href="#schedule">SCHEDULE</a><a href="#hotel">HOTEL</a><a href="#family-quest">QUEST</a><a href="#gourmet">GOURMET</a><a href="#map">MAP</a><a href="#info">INFO</a>
 </nav>
 
 <section id="schedule">
-  <div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>SCHEDULE</h2><p>3日間の家族旅行</p></div></div><p class="editorial">旅の始まりは、仕事を終えた仙台から。秋保の湯でほどけて、翌日は海へ。三陸の景色と味、そして語り部の言葉まで、家族4人でゆっくり受け取る3日間。</p><div class="quote">「たくさん回る」より、<br>家族でちゃんと味わう3日間。</div>
+  <div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>SCHEDULE</h2><p>3日間の家族旅行</p></div></div><p class="editorial">旅の始まりは、仕事を終えた<ruby>仙台<rt>せんだい</rt></ruby>から。<ruby>秋保<rt>あきう</rt></ruby>の湯でほどけて、翌日は海へ。三陸の景色と味、そして<ruby>語り部<rt>かたりべ</rt></ruby>の言葉まで、家族4人でゆっくり受け取る3日間。</p><div class="quote">「たくさん回る」より、<br>家族でちゃんと味わう3日間。</div>
 
   <article class="day">
     <div class="day-cover day1"><div><small>AKIU ONSEN</small><b>湯けむりから、旅が始まる。</b></div></div>
-    <div class="day-top"><div><div class="day-label">DAY 1 · 10/2 FRI</div><h3>秋保へ</h3></div><div>♨️</div></div>
+    <div class="day-top"><div><div class="day-label">DAY 1 · 10/2 FRI</div><h3><ruby>秋保<rt>あきう</rt></ruby>へ</h3></div><div>♨️</div></div>
     <div class="day-theme">何もしない贅沢から、旅を始める。</div>
     <div class="timeline">
-      <div class="titem"><div class="time">14:00</div><div class="action">仙台市内で仕事・用事終了</div><div class="note">ここから家族旅行スタート。</div></div>
-      <div class="titem"><div class="time">15:00〜16:00</div><div class="action">TAOYA秋保 Check-in</div></div>
-      <div class="titem"><div class="time">AFTERNOON</div><div class="action">ラウンジ・卓球・温泉</div></div>
-      <div class="titem"><div class="time">EVENING</div><div class="action">ディナービュッフェ</div><div class="note">夜はラウンジでのんびり。</div></div>
+      <div class="titem"><div class="time">12:30</div><div class="action">第54回 <ruby>青年経営者全国交流会<rt>せいねんけいえいしゃ ぜんこくこうりゅうかい</rt></ruby> in <ruby>宮城<rt>みやぎ</rt></ruby> 終了</div></div>
+      <div class="titem"><div class="time">13:05</div><div class="action">かずみ・さとわ・みひろが <ruby>仙台空港<rt>せんだいくうこう</rt></ruby> に到着 ✈️</div></div>
+      <div class="titem"><div class="time">14:00</div><div class="action">全員合流！ 家族旅行 START 🚙</div><div class="note">ここから家族旅行スタート。</div></div>
+      <div class="titem"><div class="time">15:00〜16:00</div><div class="action">TAOYA<ruby>秋保<rt>あきう</rt></ruby> Check-in</div></div>
+      <div class="titem"><div class="time">16:00〜</div><div class="action">ラウンジ・卓球・<ruby>温泉<rt>おんせん</rt></ruby></div></div>
+      <div class="titem"><div class="time">夕食</div><div class="action">ディナービュッフェ</div><div class="note">夜はラウンジでのんびり。</div></div>
     </div>
   </article>
 
   <article class="day">
     <div class="day-cover day2"><div><small>MINAMISANRIKU → KESENNUMA</small><b>海へ。家族の冒険の日。</b></div></div>
-    <div class="day-top"><div><div class="day-label">DAY 2 · 10/3 SAT</div><h3>南三陸・気仙沼</h3></div><div>🌊</div></div>
+    <div class="day-top"><div><div class="day-label">DAY 2 · 10/3 SAT</div><h3><ruby>南三陸<rt>みなみさんりく</rt></ruby>・<ruby>気仙沼<rt>けせんぬま</rt></ruby></h3></div><div>🌊</div></div>
     <div class="day-theme">海を見て、遊んで、味わう。</div>
     <div class="timeline">
-      <div class="titem"><div class="time">8:30〜9:00</div><div class="action">TAOYA秋保 出発</div></div>
-      <div class="titem"><div class="time">10:30頃</div><div class="action">南三陸へ</div><div class="note">さんさん商店街・震災復興祈念公園を散策。</div></div>
-      <div class="titem"><div class="time">12:30頃</div><div class="action">気仙沼 海の市</div><div class="note">海鮮ランチ。夜が豪華なので昼は軽めでも◎</div></div>
+      <div class="titem"><div class="time">8:30〜9:00</div><div class="action">TAOYA<ruby>秋保<rt>あきう</rt></ruby> 出発</div></div>
+      <div class="titem"><div class="time">10:30頃</div><div class="action"><ruby>南三陸<rt>みなみさんりく</rt></ruby>へ</div><div class="note">さんさん商店街・<ruby>震災<rt>しんさい</rt></ruby>復興祈念公園を散策。</div></div>
+      <div class="titem"><div class="time">12:30頃</div><div class="action"><ruby>気仙沼<rt>けせんぬま</rt></ruby> 海の市</div><div class="note"><ruby>海鮮<rt>かいせん</rt></ruby>ランチ。夜が豪華なので昼は軽めでも◎</div></div>
       <div class="titem"><div class="time">13:30〜15:00</div><div class="action">シャークミュージアム・氷の水族館</div></div>
-      <div class="titem"><div class="time">15:30頃</div><div class="action">南三陸へ戻る</div></div>
-      <div class="titem"><div class="time">17:00頃</div><div class="action">南三陸ホテル観洋 Check-in</div></div>
-      <div class="titem"><div class="time">EVENING</div><div class="action">絶景露天風呂 → 料理長おすすめ海鮮御膳</div></div>
+      <div class="titem"><div class="time">15:30頃</div><div class="action"><ruby>南三陸<rt>みなみさんりく</rt></ruby>へ戻る</div></div>
+      <div class="titem"><div class="time">17:00頃</div><div class="action"><ruby>南三陸<rt>みなみさんりく</rt></ruby>ホテル観洋 Check-in</div></div>
+      <div class="titem"><div class="time">EVENING</div><div class="action">絶景<ruby>露天風呂<rt>ろてんぶろ</rt></ruby> → <ruby>料理長<rt>りょうりちょう</rt></ruby>おすすめ<ruby>海鮮<rt>かいせん</rt></ruby>御膳</div></div>
     </div>
   </article>
 
   <article class="day">
     <div class="day-cover day3"><div><small>STORY & HOME</small><b>知って、持ち帰る。</b></div></div>
-    <div class="day-top"><div><div class="day-label">DAY 3 · 10/4 SUN</div><h3>語り部と帰路</h3></div><div>🚌</div></div>
+    <div class="day-top"><div><div class="day-label">DAY 3 · 10/4 SUN</div><h3><ruby>語り部<rt>かたりべ</rt></ruby>と帰路</h3></div><div>🚌</div></div>
     <div class="day-theme">知ることも、旅の思い出に。</div>
     <div class="timeline">
-      <div class="titem"><div class="time">EARLY MORNING</div><div class="action">志津川湾を見ながら露天風呂</div></div>
+      <div class="titem"><div class="time">EARLY MORNING</div><div class="action"><ruby>志津川湾<rt>しづがわわん</rt></ruby>を見ながら<ruby>露天風呂<rt>ろてんぶろ</rt></ruby></div></div>
       <div class="titem"><div class="time">7:00〜8:00</div><div class="action">朝食</div></div>
-      <div class="titem"><div class="time">8:45〜9:45</div><div class="action">語り部バス</div></div>
-      <div class="titem"><div class="time">10:00頃</div><div class="action">ホテル出発 → 仙台空港へ</div></div>
+      <div class="titem"><div class="time">8:45〜9:45</div><div class="action"><ruby>語り部<rt>かたりべ</rt></ruby>バス</div></div>
+      <div class="titem"><div class="time">10:00頃</div><div class="action">ホテル出発 → <ruby>仙台<rt>せんだい</rt></ruby>空港へ</div></div>
       <div class="titem"><div class="time">12:30〜13:00頃</div><div class="action">レンタカー返却目安</div></div>
-      <div class="titem"><div class="time">15:20</div><div class="action">仙台空港 発 ✈️</div></div>
+      <div class="titem"><div class="time">15:20</div><div class="action"><ruby>仙台<rt>せんだい</rt></ruby>空港 発 ✈️</div></div>
     </div>
   </article>
 </section>
 
 <section id="hotel">
-  <div class="section-head"><div class="section-no">02</div><div class="section-title"><h2>HOTEL</h2><p>今回のお宿</p></div></div><p class="editorial">一夜目は秋保で“滞在を楽しむ”。二夜目は南三陸で“海を味わう”。あえて性格の違う2軒を選んだことで、旅の景色がぐっと豊かになる。</p>
+  <div class="section-head"><div class="section-no">02</div><div class="section-title"><h2>HOTEL</h2><p>今回のお宿</p></div></div><p class="editorial">一夜目は<ruby>秋保<rt>あきう</rt></ruby>で“滞在を楽しむ”。二夜目は<ruby>南三陸<rt>みなみさんりく</rt></ruby>で“海を味わう”。あえて性格の違う2軒を選んだことで、旅の景色がぐっと豊かになる。</p>
   <div class="hotel-card">
-    <div class="mag-photo akiu"><div class="mag-caption"><small>NIGHT 01 · AKIU</small><b>湯けむりから始まる旅</b></div></div><div class="night">NIGHT 01</div><h3>TAOYA秋保</h3><div class="hotel-tag">温泉と食事を、家族みんなで。</div>
-    <div class="chips"><span class="chip">♨️ 秋保温泉</span><span class="chip">🍽️ オールインクルーシブ</span><span class="chip">🥂 ラウンジ</span><span class="chip">🏓 卓球</span></div><div class="mag-feature"><div class="mag-feature-label">EDITOR’S PICK · DINNER</div><div class="mag-feature-title">牛タン、金華イワシ、牡蠣。<br>“宮城の味”を最初の夜から。</div><p class="mag-feature-text">10月は秋冬メニュー期間。牛タン網焼き、宮城県産金華イワシの炙り寿司、三陸産大粒カキフライなどを楽しむ予定。</p><div class="quickbar"><div class="quick"><b>♨️</b><small>ONSEN</small></div><div class="quick"><b>🥂</b><small>LOUNGE</small></div><div class="quick"><b>🍽️</b><small>BUFFET</small></div></div></div>
-    <div class="btns"><a class="btn" href="https://www.ooedoonsen.jp/taoya-akiu/" target="_blank">公式サイト</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=TAOYA%E7%A7%8B%E4%BF%9D" target="_blank">Google Maps</a></div><div class="reservation"><div class="reservation-label">RESERVATION NO.</div><div class="reservation-line"><span class="reservation-no" data-full="（家族メモで確認）">••••••••83</span><button class="mini-btn reveal">表示</button></div></div>
+    <div class="mag-photo akiu"><div class="mag-caption"><small>NIGHT 01 · AKIU</small><b>湯けむりから始まる旅</b></div></div><div class="night">NIGHT 01</div><h3>TAOYA<ruby>秋保<rt>あきう</rt></ruby></h3><div class="hotel-tag"><ruby>温泉<rt>おんせん</rt></ruby>と食事を、家族みんなで。</div>
+    <div class="chips"><span class="chip">♨️ <ruby>秋保<rt>あきう</rt></ruby><ruby>温泉<rt>おんせん</rt></ruby></span><span class="chip">🍽️ オールインクルーシブ</span><span class="chip">🥂 ラウンジ</span><span class="chip">🏓 卓球</span></div><div class="mag-feature"><div class="mag-feature-label">EDITOR’S PICK · DINNER</div><div class="mag-feature-title">牛タン、金華イワシ、牡蠣。<br>“<ruby>宮城<rt>みやぎ</rt></ruby>の味”を最初の夜から。</div><p class="mag-feature-text">10月は秋冬メニュー期間。牛タン網焼き、<ruby>宮城<rt>みやぎ</rt></ruby>県産金華イワシの炙り寿司、三陸産大粒カキフライなどを楽しむ予定。</p><div class="quickbar"><div class="quick"><b>♨️</b><small>ONSEN</small></div><div class="quick"><b>🥂</b><small>LOUNGE</small></div><div class="quick"><b>🍽️</b><small>BUFFET</small></div></div></div>
+    <div class="btns"><a class="btn" href="https://www.ooedoonsen.jp/taoya-akiu/" target="_blank">公式サイト</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=TAOYA%E7%A7%8B%E4%BF%9D" target="_blank">Google Maps</a></div></div>
   </div>
   <div class="hotel-card">
-    <div class="mag-photo kanyo"><div class="mag-caption"><small>NIGHT 02 · MINAMISANRIKU</small><b>海を味わい、海に浸る</b></div></div><div class="night">NIGHT 02</div><h3>南三陸ホテル観洋</h3><div class="hotel-tag">海を見て、海を食べる。</div>
-    <div class="chips"><span class="chip">🌊 志津川湾</span><span class="chip">♨️ 絶景露天風呂</span><span class="chip">🐟 料理長おすすめ海鮮御膳</span><span class="chip">🚌 語り部バス</span></div><div class="mag-feature"><div class="mag-feature-label">EDITOR’S PICK · SANRIKU</div><div class="mag-feature-title">二夜目は、海そのものを味わう。</div><p class="mag-feature-text">予約したのは「料理長おすすめプラン」。旅の締めは、志津川湾の景色、海鮮御膳、朝の露天風呂、そして語り部体験へ。</p><div class="quickbar"><div class="quick"><b>🌊</b><small>OCEAN</small></div><div class="quick"><b>🐟</b><small>SEAFOOD</small></div><div class="quick"><b>🚌</b><small>STORY</small></div></div></div>
-    <div class="btns"><a class="btn" href="https://www.mkanyo.jp/" target="_blank">公式サイト</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E4%B8%89%E9%99%B8%E3%83%9B%E3%83%86%E3%83%AB%E8%A6%B3%E6%B4%8B" target="_blank">Google Maps</a></div><div class="reservation"><div class="reservation-label">RESERVATION NO.</div><div class="reservation-line"><span class="reservation-no" data-full="（家族メモで確認）">•••••••••••0088</span><button class="mini-btn reveal">表示</button></div><div class="editor-note">料理長おすすめプラン｜当館で最も料理内容が充実した海鮮御膳</div></div>
+    <div class="mag-photo kanyo"><div class="mag-caption"><small>NIGHT 02 · MINAMISANRIKU</small><b>海を味わい、海に浸る</b></div></div><div class="night">NIGHT 02</div><h3><ruby>南三陸<rt>みなみさんりく</rt></ruby>ホテル観洋</h3><div class="hotel-tag">海を見て、海を食べる。</div>
+    <div class="chips"><span class="chip">🌊 <ruby>志津川湾<rt>しづがわわん</rt></ruby></span><span class="chip">♨️ 絶景<ruby>露天風呂<rt>ろてんぶろ</rt></ruby></span><span class="chip">🐟 <ruby>料理長<rt>りょうりちょう</rt></ruby>おすすめ<ruby>海鮮<rt>かいせん</rt></ruby>御膳</span><span class="chip">🚌 <ruby>語り部<rt>かたりべ</rt></ruby>バス</span></div><div class="mag-feature"><div class="mag-feature-label">EDITOR’S PICK · SANRIKU</div><div class="mag-feature-title">二夜目は、海そのものを味わう。</div><p class="mag-feature-text">予約したのは「<ruby>料理長<rt>りょうりちょう</rt></ruby>おすすめプラン」。旅の締めは、<ruby>志津川湾<rt>しづがわわん</rt></ruby>の景色、<ruby>海鮮<rt>かいせん</rt></ruby>御膳、朝の<ruby>露天風呂<rt>ろてんぶろ</rt></ruby>、そして<ruby>語り部<rt>かたりべ</rt></ruby>体験へ。</p><div class="quickbar"><div class="quick"><b>🌊</b><small>OCEAN</small></div><div class="quick"><b>🐟</b><small>SEAFOOD</small></div><div class="quick"><b>🚌</b><small>STORY</small></div></div></div>
+    <div class="btns"><a class="btn" href="https://www.mkanyo.jp/" target="_blank">公式サイト</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E4%B8%89%E9%99%B8%E3%83%9B%E3%83%86%E3%83%AB%E8%A6%B3%E6%B4%8B" target="_blank">Google Maps</a></div></div>
   </div>
 </section>
 
-<section id="mission">
-  <div class="section-head"><div class="section-no">03</div><div class="section-title"><h2>MISSION</h2><p>家族でいくつクリアできるかな？</p></div></div>
-  <div class="missions" id="missionList">
-    <label class="mission"><input type="checkbox" data-id="m1"><span>🦈 サメを3種類見つける</span></label>
-    <label class="mission"><input type="checkbox" data-id="m2"><span>🧊 −20℃の世界を体験する</span></label>
-    <label class="mission"><input type="checkbox" data-id="m3"><span>🐟 一番おいしい海鮮を決める</span></label>
-    <label class="mission"><input type="checkbox" data-id="m4"><span>♨️ 海を見ながら温泉に入る</span></label>
-    <label class="mission"><input type="checkbox" data-id="m5"><span>🌿 ずんだを食べる</span></label>
-    <label class="mission"><input type="checkbox" data-id="m6"><span>📸 家族4人で最高の写真を撮る</span></label>
-    <label class="mission"><input type="checkbox" data-id="m7"><span>🚌 語り部さんの話を聞く</span></label>
-  </div>
-</section>
-
+<section id="family-quest" class="quest-wrap"><div class="quest-section-no">03</div><div class="quest-kicker">MIYAGI FAMILY QUEST</div><h2 class="quest-title"><ruby>宮城<rt>みやぎ</rt></ruby>をめぐる、7つのミッション。</h2><p class="quest-copy">できたらタップしてね！ 7こぜんぶできると「MIYAGI MASTER」になれるよ。</p><div class="quest-progress"><span id="questBar"></span></div><div class="quest-score"><span id="questCount">0</span> / 7 CLEAR</div><div class="mission-grid">
+<button class="mission-card" data-mission="shark"><span class="micon">🦈</span><span><strong>サメを3種類見つけろ！</strong><small><ruby>気仙沼<rt>けせんぬま</rt></ruby>でサメ博士になれるかな？</small></span></button>
+<button class="mission-card" data-mission="ice"><span class="micon">🧊</span><span><strong>−20℃の世界に潜入せよ！</strong><small>−20℃の「氷の水族館」にちょうせん！</small></span></button>
+<button class="mission-card" data-mission="fish"><span class="micon">🐟</span><span><strong>いちばんおいしい魚を決めよう！</strong><small>家族の<ruby>宮城<rt>みやぎ</rt></ruby>No.1グルメを選ぼう。</small></span></button>
+<button class="mission-card" data-mission="onsen"><span class="micon">♨️</span><span><strong>海が見える<ruby>露天風呂<rt>ろてんぶろ</rt></ruby>を攻略！</strong><small><ruby>志津川湾<rt>しづがわわん</rt></ruby>を眺めながら<ruby>温泉<rt>おんせん</rt></ruby>へ。</small></span></button>
+<button class="mission-card" data-mission="zunda"><span class="micon">🌿</span><span><strong>ずんだを見つけよう！</strong><small>スイーツでもシェイクでもOK。</small></span></button>
+<button class="mission-card" data-mission="photo"><span class="micon">📸</span><span><strong>家族4人でさいこうの写真！</strong><small>あとで見たくなる写真をとろう。</small></span></button>
+<button class="mission-card" data-mission="story"><span class="micon">🚌</span><span><strong>はじめて知ったことを1つ見つけよう</strong><small><ruby>語り部<rt>かたりべ</rt></ruby>さんのお話から、未来に持ち帰る発見を。</small></span></button>
+</div><div class="quest-badges" aria-label="集めるバッジ">
+<div class="quest-badge" id="badge2"><b>🦈</b><span>SEA SCOUT<br>2 CLEAR</span></div>
+<div class="quest-badge" id="badge4"><b>♨️</b><span>TRIP HERO<br>4 CLEAR</span></div>
+<div class="quest-badge" id="badge7"><b>🏆</b><span>MIYAGI MASTER<br>7 CLEAR</span></div>
+</div><div id="masterCard" class="master-card"><div class="trophy">🏆</div><h3>MIYAGI MASTER 認定！</h3><p>7つのミッション、ぜんぶクリア！</p></div></section><script>(function(){const cards=[...document.querySelectorAll('.mission-card')];if(!cards.length)return;const key='miyagiFamilyQuestV1';let done={};try{done=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}function render(){let n=0;cards.forEach(c=>{let ok=!!done[c.dataset.mission];c.classList.toggle('done',ok);if(ok)n++});document.getElementById('questCount').textContent=n;document.getElementById('questBar').style.width=(n/7*100)+'%';document.getElementById('masterCard').classList.toggle('show',n===7);document.getElementById('badge2').classList.toggle('unlocked',n>=2);document.getElementById('badge4').classList.toggle('unlocked',n>=4);document.getElementById('badge7').classList.toggle('unlocked',n>=7)}cards.forEach(c=>c.onclick=()=>{done[c.dataset.mission]=!done[c.dataset.mission];try{localStorage.setItem(key,JSON.stringify(done))}catch(e){}render()});render()})();</script>
 <section id="gourmet">
   <div class="section-head"><div class="section-no">04</div><div class="section-title"><h2>GOURMET</h2><p>宮城で食べたい！</p></div></div><div class="gourmet-lead">旅先の記憶は、味の記憶でもある。<br>仙台の牛タン、気仙沼の魚、三陸の鮑。家族で「いちばん」を決めよう。</div>
   <div class="food-grid illustrated">
@@ -394,48 +428,25 @@ footer{text-align:center;padding:28px 20px 48px;color:#8b8f93;font-size:12px}
   });
 })();
 </script>
-<section id="family-quest" class="quest-wrap"><div class="quest-kicker">MIYAGI FAMILY QUEST</div><h2 class="quest-title">宮城をめぐる、7つのミッション。</h2><p class="quest-copy">できたミッションをタップ！ 全部クリアすると「MIYAGI MASTER」の称号があらわれます。</p><div class="quest-progress"><span id="questBar"></span></div><div class="quest-score"><span id="questCount">0</span> / 7 CLEAR</div><div class="mission-grid">
-<button class="mission-card" data-mission="shark"><span class="micon">🦈</span><span><strong>サメを3種類見つけろ！</strong><small>気仙沼でサメ博士になれるかな？</small></span></button>
-<button class="mission-card" data-mission="ice"><span class="micon">🧊</span><span><strong>−20℃の世界に潜入せよ！</strong><small>本日のBOSS「氷の水族館」を攻略。</small></span></button>
-<button class="mission-card" data-mission="fish"><span class="micon">🐟</span><span><strong>一番おいしい魚を決めろ！</strong><small>家族の宮城No.1グルメを選ぼう。</small></span></button>
-<button class="mission-card" data-mission="onsen"><span class="micon">♨️</span><span><strong>海が見える露天風呂を攻略！</strong><small>志津川湾を眺めながら温泉へ。</small></span></button>
-<button class="mission-card" data-mission="zunda"><span class="micon">🌿</span><span><strong>ずんだを発見せよ！</strong><small>スイーツでもシェイクでもOK。</small></span></button>
-<button class="mission-card" data-mission="photo"><span class="micon">📸</span><span><strong>家族4人のベストショット！</strong><small>旅の表紙にしたい1枚を撮ろう。</small></span></button>
-<button class="mission-card" data-mission="story"><span class="micon">🚌</span><span><strong>初めて知ったことを1つ覚えよう</strong><small>語り部さんのお話から、未来に持ち帰る発見を。</small></span></button>
-</div><div id="masterCard" class="master-card"><div class="trophy">🏆</div><h3>MIYAGI MASTER 認定！</h3><p>7つのミッション、ぜんぶクリア！</p></div></section><script>(function(){const cards=[...document.querySelectorAll('.mission-card')];if(!cards.length)return;const key='miyagiFamilyQuestV1';let done={};try{done=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}function render(){let n=0;cards.forEach(c=>{let ok=!!done[c.dataset.mission];c.classList.toggle('done',ok);if(ok)n++});document.getElementById('questCount').textContent=n;document.getElementById('questBar').style.width=(n/7*100)+'%';document.getElementById('masterCard').classList.toggle('show',n===7)}cards.forEach(c=>c.onclick=()=>{done[c.dataset.mission]=!done[c.dataset.mission];try{localStorage.setItem(key,JSON.stringify(done))}catch(e){}render()});render()})();</script>
+
 <script>
 (function(){
-  // 旅行開始: 2026-10-02 14:00 JST
-  const target = new Date("2026-10-02T14:00:00+09:00").getTime();
-  const dEl = document.getElementById("cdDays");
-  const hEl = document.getElementById("cdHours");
-  const mEl = document.getElementById("cdMinutes");
-  const sEl = document.getElementById("cdSeconds");
-  const fb = document.getElementById("countdownFallback");
-
-  function tick(){
-    const now = Date.now();
-    let diff = target - now;
-    if(diff <= 0){
-      dEl.textContent = "00"; hEl.textContent = "00";
-      mEl.textContent = "00"; sEl.textContent = "00";
-      fb.textContent = "宮城旅行 START！";
-      return;
-    }
-    const days = Math.floor(diff / 86400000); diff %= 86400000;
-    const hours = Math.floor(diff / 3600000); diff %= 3600000;
-    const minutes = Math.floor(diff / 60000); diff %= 60000;
-    const seconds = Math.floor(diff / 1000);
-    dEl.textContent = String(days).padStart(2,"0");
-    hEl.textContent = String(hours).padStart(2,"0");
-    mEl.textContent = String(minutes).padStart(2,"0");
-    sEl.textContent = String(seconds).padStart(2,"0");
-    fb.textContent = "2026.10.2 14:00 START";
-  }
-  tick();
-  setInterval(tick,1000);
+  const quizzes=[
+    ['みやぎにある、島がたくさん見えるゆうめいな場所は？','松島（まつしま）！ 海と島のけしきがとてもきれいです。'],
+    ['ずんだは、何の豆からつくるでしょう？','えだ豆！ ゆでたえだ豆をつぶしてつくります。'],
+    ['仙台（せんだい）でゆうめいな武将（ぶしょう）はだれ？','伊達政宗（だてまさむね）！ かぶとの大きな三日月が目じるしです。'],
+    ['南三陸（みなみさんりく）のホテルの前に広がる海は？','志津川湾（しづがわわん）！ 朝のおふろからも見られます。'],
+    ['気仙沼（けせんぬま）の「氷の水族館」は何℃？','−20℃！ あたたかい服をかりて入ります。'],
+    ['仙台（せんだい）でゆうめいなお肉の食べものは？','牛タン！ ぶあつく切って、やいて食べます。'],
+    ['気仙沼（けせんぬま）で3しゅるい見つける生きものは？','サメ！ シャークミュージアムでさがしてみよう。'],
+    ['さいごの日の朝、町のお話を聞く体験は？','語り部（かたりべ）バス！ 南三陸のことを聞いて知る時間です。']
+  ];
+  const now=new Date();
+  const start=new Date(now.getFullYear(),0,0); const day=Math.floor((now-start)/86400000);
+  const q=quizzes[day%quizzes.length];
+  const qe=document.getElementById('dailyQuestion'), ae=document.getElementById('dailyAnswer'), btn=document.getElementById('dailyReveal');
+  if(qe&&ae&&btn){qe.textContent=q[0];ae.textContent=q[1];btn.addEventListener('click',()=>{ae.classList.toggle('show');btn.textContent=ae.classList.contains('show')?'こたえをかくす 🙈':'こたえを見る 👀';});}
 })();
 </script>
-
 </body>
 </html>
