@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>MIYAGI FAMILY TRIP 2026</title>
+<meta name="description" content="2026年10月2日〜4日 宮城家族旅行のしおり" />
+<style>
+:root{
+  --navy:#0d2740;
+  --blue:#315d7c;
+  --sky:#dceaf1;
+  --sand:#f3eee5;
+  --gold:#b89555;
+  --ink:#17202a;
+  --muted:#66717d;
+  --white:#fff;
+  --card:#ffffffee;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#f7f5f0;line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.hero{min-height:92svh;padding:24px 20px 34px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;position:relative;overflow:hidden;background:
+linear-gradient(180deg,rgba(4,20,35,.15),rgba(4,20,35,.78)),
+radial-gradient(circle at 80% 15%,rgba(255,255,255,.28),transparent 24%),
+linear-gradient(135deg,#3e7598 0%,#164464 45%,#0c2a42 100%)}
+.hero:before{content:"";position:absolute;inset:auto -20% -8% -10%;height:48%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.08));transform:skewY(-6deg)}
+.hero-inner{position:relative;z-index:2}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.9}
+h1{font-size:44px;line-height:1.08;margin:10px 0 14px;letter-spacing:.01em}
+.sub{font-size:15px;opacity:.92}
+.route{margin-top:18px;font-size:14px;letter-spacing:.06em}
+.countdown{position:relative;z-index:2;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:16px}
+.countdown-title{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.count-num{font-size:25px;font-weight:700;line-height:1}
+.count-label{font-size:10px;opacity:.75;margin-top:5px}
+nav{position:sticky;top:0;z-index:10;background:rgba(247,245,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e7e1d8;overflow:auto;white-space:nowrap;padding:10px 12px}
+nav a{display:inline-block;font-size:12px;margin:0 10px;color:var(--navy);font-weight:700}
+section{padding:58px 20px;max-width:760px;margin:auto}
+.section-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:28px}
+.section-no{font-size:12px;letter-spacing:.12em;color:var(--gold);font-weight:700;padding-top:6px}
+.section-title h2{font-size:31px;line-height:1.2;margin:0;color:var(--navy)}
+.section-title p{margin:8px 0 0;color:var(--muted);font-size:14px}
+.day{background:var(--white);border-radius:24px;padding:22px;margin:0 0 18px;box-shadow:0 10px 30px rgba(25,41,57,.07)}
+.day-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.day-label{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:.15em}
+.day h3{font-size:23px;margin:4px 0;color:var(--navy)}
+.day-theme{font-size:14px;color:var(--muted);margin-bottom:18px}
+.timeline{border-left:1px solid #d9d3ca;margin-left:7px;padding-left:18px}
+.titem{position:relative;margin:0 0 16px}
+.titem:before{content:"";position:absolute;left:-24px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #f7f3eb}
+.time{font-size:12px;color:var(--blue);font-weight:800}
+.action{font-weight:700}
+.note{font-size:13px;color:var(--muted)}
+.hotel-card{background:linear-gradient(135deg,#fff,#f5f1ea);border-radius:28px;padding:24px;margin-bottom:18px;border:1px solid #e8e0d4}
+.night{font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:800}
+.hotel-card h3{font-size:27px;color:var(--navy);margin:5px 0 4px}
+.hotel-tag{font-size:14px;color:var(--muted);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{background:#fff;border:1px solid #e4ddd2;padding:8px 10px;border-radius:999px;font-size:12px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:block;text-align:center;padding:13px 12px;border-radius:14px;font-size:13px;font-weight:800;background:var(--navy);color:#fff}
+.btn.alt{background:#fff;color:var(--navy);border:1px solid #d8d1c7}
+.missions{display:grid;gap:10px}
+.mission{display:flex;align-items:center;gap:12px;background:#fff;border-radius:16px;padding:14px 15px;border:1px solid #ece5dc;cursor:pointer;user-select:none}
+.mission input{width:22px;height:22px;accent-color:var(--navy)}
+.mission span{font-size:14px;font-weight:700}
+.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.food{min-height:140px;border-radius:20px;padding:16px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:linear-gradient(160deg,#406f8b,#193a54)}
+.food:nth-child(2){background:linear-gradient(160deg,#7f5633,#3f2d22)}
+.food:nth-child(3){background:linear-gradient(160deg,#7a8b58,#38432a)}
+.food:nth-child(4){background:linear-gradient(160deg,#9b6a6e,#593b44)}
+.food:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.25),transparent 28%)}
+.food strong,.food small{position:relative;z-index:1}
+.food strong{font-size:18px}
+.food small{opacity:.85}
+.map-list{display:grid;gap:10px}
+.map-row{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;padding:15px 16px;border-radius:16px;border:1px solid #e9e3db}
+.map-row b{font-size:14px;color:var(--navy)}
+.map-row span{font-size:12px;color:var(--gold);font-weight:800}
+.info{background:var(--navy);color:#fff;border-radius:26px;padding:22px}
+.info-row{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.info-row:last-child{border-bottom:0}
+.info-label{font-size:11px;letter-spacing:.12em;opacity:.65}
+.info-value{font-size:16px;font-weight:700;margin-top:3px}
+.info-note{font-size:12px;opacity:.75;margin-top:4px}
+.memory{background:linear-gradient(145deg,#e9eef0,#f8f3ea);border-radius:28px;padding:28px;text-align:center}
+.memory h3{font-size:28px;color:var(--navy);margin:0 0 12px}
+.memory p{color:var(--muted);font-size:14px}
+footer{text-align:center;padding:28px 20px 48px;color:#8b8f93;font-size:12px}
+
+.mag-photo{height:230px;border-radius:22px;margin:-4px -4px 20px;position:relative;overflow:hidden;background:linear-gradient(145deg,#8eb0bf 0%,#d8c7aa 46%,#254d67 100%)}
+.mag-photo:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 22%,rgba(255,255,255,.55),transparent 18%),linear-gradient(180deg,transparent 42%,rgba(7,25,40,.58))}
+.mag-photo.akiu{background:linear-gradient(155deg,#6e8c75 0%,#c7a878 48%,#3e5b55 100%)}
+.mag-photo.kanyo{background:linear-gradient(155deg,#9cc4d3 0%,#4d819b 50%,#173c55 100%)}
+.mag-caption{position:absolute;left:18px;bottom:15px;color:white;z-index:2}.mag-caption small{font-size:10px;letter-spacing:.2em}.mag-caption b{display:block;font-family:serif;font-size:24px;letter-spacing:.04em}
+.reservation{margin-top:16px;background:#f8f4ed;border:1px dashed #d4c4a8;border-radius:16px;padding:13px 14px}.reservation-label{font-size:10px;letter-spacing:.14em;color:#8b7550;font-weight:800}.reservation-line{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}.reservation-no{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;font-weight:800;letter-spacing:.06em}.mini-btn{border:0;background:#0d2740;color:#fff;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer}
+.editor-note{font-size:11px;color:#8b8f93;margin-top:8px}
+.quote{font-family:serif;font-size:23px;line-height:1.65;color:var(--navy);padding:8px 4px 28px;border-bottom:1px solid #ddd5c9;margin-bottom:28px}
+
+.hero{background:linear-gradient(180deg,rgba(4,20,35,.08),rgba(4,20,35,.7)),linear-gradient(160deg,#9fd2df 0%,#5f9ab4 34%,#244f68 64%,#102f47 100%);}
+.hero:after{content:"";position:absolute;left:-12%;right:-12%;bottom:-2%;height:46%;background:radial-gradient(90% 80% at 30% 100%,#163a4f 0 46%,transparent 47%),radial-gradient(75% 70% at 75% 100%,#224a5c 0 42%,transparent 43%),linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,0));opacity:.9}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);font-size:11px;letter-spacing:.12em}
+.editorial{margin:0 0 24px;font-family:Georgia,"Yu Mincho",serif;font-size:15px;line-height:1.95;color:#4d5963}
+.photo-banner{height:220px;border-radius:24px;overflow:hidden;position:relative;margin:0 0 22px;background:#d7e1e8}
+.photo-banner img{width:100%;height:100%;object-fit:cover}
+.photo-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,26,40,.66))}
+.photo-copy{position:absolute;z-index:2;left:18px;bottom:15px;color:#fff}.photo-copy small{font-size:10px;letter-spacing:.16em}.photo-copy b{display:block;font-family:Georgia,"Yu Mincho",serif;font-size:24px}
+.mag-photo.kanyo{background:linear-gradient(180deg,transparent 35%,rgba(5,25,39,.64)),linear-gradient(155deg,#bce4ee 0%,#5a9bb7 48%,#19425c 100%)}
+.mag-photo.kanyo:after{content:"";position:absolute;left:-5%;right:-5%;bottom:-12%;height:58%;background:radial-gradient(70% 90% at 15% 100%,#173c4d 0 45%,transparent 46%),radial-gradient(70% 90% at 78% 100%,#28596a 0 40%,transparent 41%);opacity:.85}
+.mag-photo.akiu{background:linear-gradient(145deg,#263f35,#6e8c75 38%,#c7a878 100%)}
+.mag-photo.akiu:after{content:"秋保温泉 · AKIU ONSEN";position:absolute;right:16px;top:16px;color:rgba(255,255,255,.8);font-size:10px;letter-spacing:.14em}
+.day{position:relative;overflow:hidden}.day:after{content:"";position:absolute;right:-24px;top:-24px;width:92px;height:92px;border-radius:50%;border:1px solid #eee4d4;opacity:.7}
+.day-theme{font-family:Georgia,"Yu Mincho",serif;font-size:16px;color:#475561}
+.hotel-card{overflow:hidden}
+.hotel-card .mag-photo{border-radius:22px}
+.gourmet-lead{font-family:Georgia,"Yu Mincho",serif;font-size:18px;line-height:1.8;color:var(--navy);margin:-8px 0 22px}
+.small-source{font-size:10px;color:#8d9397;margin-top:8px}
+
+
+.photo-banner.scenic{background:linear-gradient(180deg,#b9dfea 0%,#70adc2 48%,#356f8b 72%,#1c4a65 100%)}
+.photo-banner.scenic .sun{position:absolute;width:56px;height:56px;border-radius:50%;right:14%;top:18%;background:rgba(255,245,207,.9);box-shadow:0 0 30px rgba(255,245,207,.65)}
+.photo-banner.scenic .island{position:absolute;bottom:-18px;border-radius:50% 50% 0 0;background:#244c55;z-index:1}
+.photo-banner.scenic .island-a{width:65%;height:42%;left:-15%;transform:rotate(4deg)}
+.photo-banner.scenic .island-b{width:58%;height:34%;right:-19%;background:#2e5c63;transform:rotate(-5deg)}
+.count-fallback{font-size:12px;margin-top:10px;opacity:.86;text-align:center}
+@media(min-width:720px){h1{font-size:64px}.hero{min-height:78vh}.food-grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+
+<style id="magazine-v2">
+.mag-feature{margin:18px 0 0;padding:16px;border-radius:20px;background:#0f2c44;color:#fff;position:relative;overflow:hidden}
+.mag-feature:before{content:"";position:absolute;width:140px;height:140px;border:1px solid rgba(255,255,255,.16);border-radius:50%;right:-44px;top:-52px}
+.mag-feature-label{font-size:10px;letter-spacing:.18em;opacity:.7;font-weight:800}
+.mag-feature-title{font-family:Georgia,"Yu Mincho",serif;font-size:20px;line-height:1.45;margin:4px 0 9px}
+.mag-feature-text{font-size:12px;line-height:1.8;opacity:.86;margin:0}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.story-card{border-radius:18px;padding:15px;min-height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden;position:relative}
+.story-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 12%,rgba(255,255,255,.25),transparent 27%)}
+.story-card>*{position:relative;z-index:1}.story-card small{font-size:9px;letter-spacing:.14em;opacity:.8}.story-card b{font-family:Georgia,"Yu Mincho",serif;font-size:18px;line-height:1.35}.story-card span{font-size:11px;opacity:.84}
+.story-card.food-a{background:linear-gradient(150deg,#9b6944,#4d2c1d)}.story-card.food-b{background:linear-gradient(150deg,#4d879b,#173e57)}.story-card.fun-a{background:linear-gradient(150deg,#3c647c,#152f43)}.story-card.fun-b{background:linear-gradient(150deg,#7e8f74,#3d4f3f)}
+.hero-stamp{position:absolute;right:18px;top:28px;z-index:3;width:72px;height:72px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:grid;place-items:center;text-align:center;font-size:9px;line-height:1.3;letter-spacing:.08em;transform:rotate(8deg);background:rgba(8,30,47,.16)}
+.day-cover{height:150px;border-radius:18px;margin:4px 0 18px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:16px;color:#fff}
+.day-cover:before,.day-cover:after{content:"";position:absolute}.day-cover>*{position:relative;z-index:2}
+.day-cover.day1{background:linear-gradient(160deg,#385a48,#9f8259)}.day-cover.day1:before{width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.10);right:-50px;top:-80px}.day-cover.day1:after{left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg,transparent,rgba(20,30,24,.42))}
+.day-cover.day2{background:linear-gradient(160deg,#8ac2d0,#26566d)}.day-cover.day2:before{left:-12%;right:-12%;bottom:-45px;height:105px;border-radius:50% 50% 0 0;background:#21495e}.day-cover.day2:after{left:58%;bottom:20px;width:90px;height:38px;border-radius:50%;background:#3f6775;opacity:.8}
+.day-cover.day3{background:linear-gradient(160deg,#c8d7dc,#345b6c)}.day-cover.day3:before{left:-10%;right:-10%;bottom:-60px;height:130px;border-radius:50%;background:#244b5d}.day-cover.day3:after{right:20px;top:18px;width:54px;height:54px;border-radius:50%;background:rgba(255,245,211,.7)}
+.day-cover small{font-size:9px;letter-spacing:.18em}.day-cover b{display:block;font-family:Georgia,"Yu Mincho",serif;font-size:21px;margin-top:3px}
+.quickbar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 0}.quick{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;text-align:center;padding:9px 5px}.quick b{display:block;font-size:13px}.quick small{font-size:9px;opacity:.72}
+.family-note{background:#fff;border:1px solid #e8e1d7;border-radius:20px;padding:17px 18px;margin:18px 0}.family-note b{color:var(--navy);font-size:14px}.family-note p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.8}
+
+/* --- Miyagi cover & gourmet illustration upgrade --- */
+.miyagi-motif{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.miyagi-moon{position:absolute;right:22px;top:72px;width:112px;height:112px;border:7px solid rgba(255,221,143,.82);border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(-20deg);filter:drop-shadow(0 4px 10px rgba(0,0,0,.08))}
+.miyagi-islands{position:absolute;left:-4%;right:-4%;bottom:0;height:37%}
+.miyagi-islands:before,.miyagi-islands:after{content:"";position:absolute;bottom:0;border-radius:55% 55% 0 0;background:rgba(10,52,67,.92)}
+.miyagi-islands:before{left:-4%;width:58%;height:52%;transform:rotate(2deg)}
+.miyagi-islands:after{right:-8%;width:62%;height:63%;transform:rotate(-3deg);background:rgba(16,66,79,.92)}
+.pine{position:absolute;bottom:27%;left:11%;width:68px;height:46px;border-radius:60% 40% 55% 45%;background:rgba(8,57,48,.92);transform:rotate(-7deg);box-shadow:27px 9px 0 -8px rgba(8,57,48,.85),-20px 11px 0 -10px rgba(8,57,48,.82)}
+.pine:after{content:"";position:absolute;left:31px;top:24px;width:5px;height:54px;background:rgba(74,53,35,.82);transform:rotate(7deg)}
+.tanabata{position:absolute;left:18px;top:92px;display:flex;gap:6px;opacity:.72}
+.tanabata i{display:block;width:8px;height:76px;border-radius:8px 8px 14px 14px;background:linear-gradient(#f7d784,#e88e86);transform-origin:top}
+.tanabata i:nth-child(2){height:58px;background:linear-gradient(#d8f0ed,#6aa8aa);transform:rotate(5deg)}
+.tanabata i:nth-child(3){height:68px;background:linear-gradient(#f5e2ef,#b988b8);transform:rotate(-4deg)}
+.hero-copyline{margin-top:8px;font-size:12px;letter-spacing:.1em;opacity:.8}
+.hero-destinations{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.hero-destinations span{font-size:10px;padding:6px 9px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.08)}
+.gourmet-lead{font-family:Georgia,"Yu Mincho",serif;color:#465460;font-size:15px;line-height:1.95;margin:-5px 0 22px}
+.food-grid.illustrated{grid-template-columns:1fr 1fr;gap:14px}
+.food-card{background:#fff;border:1px solid #e8e1d8;border-radius:22px;padding:14px;min-height:182px;box-shadow:0 8px 24px rgba(20,39,55,.05);display:flex;flex-direction:column;justify-content:space-between}
+.food-illust{height:112px;border-radius:17px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#edf5f7,#f8f0e3)}
+.food-card:nth-child(2) .food-illust{background:linear-gradient(145deg,#eef4f8,#e7f2ef)}
+.food-card:nth-child(3) .food-illust{background:linear-gradient(145deg,#f4eee7,#edf2ec)}
+.food-card:nth-child(4) .food-illust{background:linear-gradient(145deg,#eef3df,#f7f1dc)}
+.food-illust svg{width:86px;height:86px;stroke:var(--navy);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:2}
+.food-illust .accent{stroke:var(--gold)}
+.food-meta small{display:block;font-size:9px;letter-spacing:.16em;color:var(--gold);font-weight:800;margin-top:10px}
+.food-meta strong{display:block;font-size:18px;color:var(--navy);line-height:1.3;margin-top:3px}
+.food-meta span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.food-badge{position:absolute;right:9px;top:9px;font-size:9px;background:rgba(255,255,255,.8);padding:4px 7px;border-radius:999px;color:var(--navy);font-weight:800}
+.miyagi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.miyagi-strip div{background:#fff;border:1px solid #e9e1d7;border-radius:14px;text-align:center;padding:10px 4px}.miyagi-strip b{font-size:20px;display:block}.miyagi-strip small{font-size:9px;color:var(--muted)}
+
+@media(max-width:380px){h1{font-size:39px}.story-grid{grid-template-columns:1fr}.food-grid{grid-template-columns:1fr 1fr}}
+</style>
+<style>.quest-wrap{margin:28px 16px;padding:22px 18px;border-radius:24px;background:linear-gradient(145deg,#fff8df,#f4fbff);box-shadow:0 12px 34px rgba(25,48,68,.10);color:#203746}.quest-kicker{font-size:12px;letter-spacing:.18em;font-weight:800;color:#a77916}.quest-title{font-size:25px;margin:7px 0;color:#15354d}.quest-copy{font-size:14px;line-height:1.7;color:#56636d}.quest-progress{margin:16px 0 7px;height:14px;border-radius:999px;background:#e7edf0;overflow:hidden}.quest-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#f2b441,#4e9ec4);transition:.35s}.quest-score{text-align:right;font-weight:800;font-size:13px}.mission-grid{display:grid;gap:11px;margin-top:16px}.mission-card{border:0;width:100%;padding:14px;border-radius:18px;background:white;display:flex;gap:12px;align-items:center;text-align:left;box-shadow:0 5px 18px rgba(20,52,78,.08);color:#203746}.mission-card .micon{font-size:29px;min-width:38px;text-align:center}.mission-card strong{display:block;font-size:15px}.mission-card small{display:block;margin-top:3px;color:#71808a;line-height:1.45}.mission-card.done{background:#eef9f2;outline:2px solid rgba(63,139,88,.18)}.mission-card.done strong:after{content:"  ✓ CLEAR!";color:#2e8050;font-size:11px}.master-card{display:none;margin-top:18px;padding:20px;border-radius:20px;text-align:center;background:linear-gradient(135deg,#173b56,#235f7d);color:white}.master-card.show{display:block}.master-card .trophy{font-size:42px}</style>
+<style>
+.live-countdown{margin:22px 16px 30px;padding:20px 16px;border-radius:24px;background:linear-gradient(145deg,#0f3148,#1f5e78);color:#fff;box-shadow:0 14px 36px rgba(10,36,52,.18);text-align:center}
+.countdown-label{font-size:11px;letter-spacing:.22em;font-weight:800;color:#f2c66f}
+.countdown-title{margin:7px 0 15px;font-size:18px;font-weight:700}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.count-box{padding:12px 4px;border-radius:16px;background:rgba(255,255,255,.10);backdrop-filter:blur(4px)}
+.count-box strong{display:block;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.count-box span{display:block;margin-top:7px;font-size:9px;letter-spacing:.12em;color:#d8e6ee}
+.countdown-fallback{margin-top:12px;font-size:12px;color:#d5e5ed}
+@media(max-width:390px){.count-box strong{font-size:23px}.countdown-grid{gap:6px}}
+</style>
+
+</head>
+<body>
+<div style="margin:18px 16px;padding:12px 14px;border-radius:14px;background:#f5f7f8;color:#59666f;font-size:12px;line-height:1.6">
+  🔒 公開版のため、ホテル予約番号などの個人用予約情報は掲載していません。
+</div>
+
+<section class="live-countdown" aria-label="旅行までのカウントダウン">
+  <div class="countdown-label">COUNTDOWN TO MIYAGI</div>
+  <div class="countdown-title">宮城旅行まで、あと</div>
+  <div class="countdown-grid">
+    <div class="count-box"><strong id="cdDays">--</strong><span>DAYS</span></div>
+    <div class="count-box"><strong id="cdHours">--</strong><span>HOURS</span></div>
+    <div class="count-box"><strong id="cdMinutes">--</strong><span>MIN</span></div>
+    <div class="count-box"><strong id="cdSeconds">--</strong><span>SEC</span></div>
+  </div>
+  <div id="countdownFallback" class="countdown-fallback">2026.10.2 START</div>
+</section>
+
+<header class="hero" id="top">
+  <div class="miyagi-motif" aria-hidden="true"><div class="miyagi-moon"></div><div class="tanabata"><i></i><i></i><i></i></div><div class="miyagi-islands"></div><div class="pine"></div></div>
+  <div class="hero-stamp">FAMILY<br>TRIP<br>2026</div><div class="hero-inner">
+    <div class="kicker">MIYAGI FAMILY TRIP</div>
+    <h1>宮城、<br>家族の旅。</h1>
+    <div class="sub">2026.10.2 FRI ─ 10.4 SUN</div><div style="margin-top:10px;font-family:serif;font-size:18px;letter-spacing:.08em">温泉、海、そして家族の記憶。</div>
+    <div class="route">秋保 ─ 南三陸 ─ 気仙沼</div><div class="hero-copyline">松島の海、伊達の三日月、秋保の湯。宮城をめぐる3日間。</div><div class="hero-destinations"><span>♨ AKIU</span><span>🌊 SANRIKU</span><span>🐟 KESENNUMA</span><span>🌿 MIYAGI</span></div><div class="hero-badge">FAMILY TRAVEL MAGAZINE · 03 DAYS</div>
+  </div>
+  <div class="countdown">
+    <div class="countdown-title">COUNTDOWN TO OUR TRIP</div>
+    <div class="count-grid">
+      <div><div class="count-num" id="d">--</div><div class="count-label">DAYS</div></div>
+      <div><div class="count-num" id="h">--</div><div class="count-label">HOURS</div></div>
+      <div><div class="count-num" id="m">--</div><div class="count-label">MIN</div></div>
+      <div><div class="count-num" id="s">--</div><div class="count-label">SEC</div></div>
+    </div><div class="count-fallback" id="countFallback">旅行まであと 36日</div>
+  </div>
+</header>
+<nav>
+  <a href="#schedule">SCHEDULE</a><a href="#hotel">HOTEL</a><a href="#mission">MISSION</a><a href="#gourmet">GOURMET</a><a href="#map">MAP</a><a href="#info">INFO</a>
+</nav>
+
+<section id="schedule">
+  <div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>SCHEDULE</h2><p>3日間の家族旅行</p></div></div><p class="editorial">旅の始まりは、仕事を終えた仙台から。秋保の湯でほどけて、翌日は海へ。三陸の景色と味、そして語り部の言葉まで、家族4人でゆっくり受け取る3日間。</p><div class="quote">「たくさん回る」より、<br>家族でちゃんと味わう3日間。</div>
+
+  <article class="day">
+    <div class="day-cover day1"><div><small>AKIU ONSEN</small><b>湯けむりから、旅が始まる。</b></div></div>
+    <div class="day-top"><div><div class="day-label">DAY 1 · 10/2 FRI</div><h3>秋保へ</h3></div><div>♨️</div></div>
+    <div class="day-theme">何もしない贅沢から、旅を始める。</div>
+    <div class="timeline">
+      <div class="titem"><div class="time">14:00</div><div class="action">仙台市内で仕事・用事終了</div><div class="note">ここから家族旅行スタート。</div></div>
+      <div class="titem"><div class="time">15:00〜16:00</div><div class="action">TAOYA秋保 Check-in</div></div>
+      <div class="titem"><div class="time">AFTERNOON</div><div class="action">ラウンジ・卓球・温泉</div></div>
+      <div class="titem"><div class="time">EVENING</div><div class="action">ディナービュッフェ</div><div class="note">夜はラウンジでのんびり。</div></div>
+    </div>
+  </article>
+
+  <article class="day">
+    <div class="day-cover day2"><div><small>MINAMISANRIKU → KESENNUMA</small><b>海へ。家族の冒険の日。</b></div></div>
+    <div class="day-top"><div><div class="day-label">DAY 2 · 10/3 SAT</div><h3>南三陸・気仙沼</h3></div><div>🌊</div></div>
+    <div class="day-theme">海を見て、遊んで、味わう。</div>
+    <div class="timeline">
+      <div class="titem"><div class="time">8:30〜9:00</div><div class="action">TAOYA秋保 出発</div></div>
+      <div class="titem"><div class="time">10:30頃</div><div class="action">南三陸へ</div><div class="note">さんさん商店街・震災復興祈念公園を散策。</div></div>
+      <div class="titem"><div class="time">12:30頃</div><div class="action">気仙沼 海の市</div><div class="note">海鮮ランチ。夜が豪華なので昼は軽めでも◎</div></div>
+      <div class="titem"><div class="time">13:30〜15:00</div><div class="action">シャークミュージアム・氷の水族館</div></div>
+      <div class="titem"><div class="time">15:30頃</div><div class="action">南三陸へ戻る</div></div>
+      <div class="titem"><div class="time">17:00頃</div><div class="action">南三陸ホテル観洋 Check-in</div></div>
+      <div class="titem"><div class="time">EVENING</div><div class="action">絶景露天風呂 → 料理長おすすめ海鮮御膳</div></div>
+    </div>
+  </article>
+
+  <article class="day">
+    <div class="day-cover day3"><div><small>STORY & HOME</small><b>知って、持ち帰る。</b></div></div>
+    <div class="day-top"><div><div class="day-label">DAY 3 · 10/4 SUN</div><h3>語り部と帰路</h3></div><div>🚌</div></div>
+    <div class="day-theme">知ることも、旅の思い出に。</div>
+    <div class="timeline">
+      <div class="titem"><div class="time">EARLY MORNING</div><div class="action">志津川湾を見ながら露天風呂</div></div>
+      <div class="titem"><div class="time">7:00〜8:00</div><div class="action">朝食</div></div>
+      <div class="titem"><div class="time">8:45〜9:45</div><div class="action">語り部バス</div></div>
+      <div class="titem"><div class="time">10:00頃</div><div class="action">ホテル出発 → 仙台空港へ</div></div>
+      <div class="titem"><div class="time">12:30〜13:00頃</div><div class="action">レンタカー返却目安</div></div>
+      <div class="titem"><div class="time">15:20</div><div class="action">仙台空港 発 ✈️</div></div>
+    </div>
+  </article>
+</section>
+
+<section id="hotel">
+  <div class="section-head"><div class="section-no">02</div><div class="section-title"><h2>HOTEL</h2><p>今回のお宿</p></div></div><p class="editorial">一夜目は秋保で“滞在を楽しむ”。二夜目は南三陸で“海を味わう”。あえて性格の違う2軒を選んだことで、旅の景色がぐっと豊かになる。</p>
+  <div class="hotel-card">
+    <div class="mag-photo akiu"><div class="mag-caption"><small>NIGHT 01 · AKIU</small><b>湯けむりから始まる旅</b></div></div><div class="night">NIGHT 01</div><h3>TAOYA秋保</h3><div class="hotel-tag">温泉と食事を、家族みんなで。</div>
+    <div class="chips"><span class="chip">♨️ 秋保温泉</span><span class="chip">🍽️ オールインクルーシブ</span><span class="chip">🥂 ラウンジ</span><span class="chip">🏓 卓球</span></div><div class="mag-feature"><div class="mag-feature-label">EDITOR’S PICK · DINNER</div><div class="mag-feature-title">牛タン、金華イワシ、牡蠣。<br>“宮城の味”を最初の夜から。</div><p class="mag-feature-text">10月は秋冬メニュー期間。牛タン網焼き、宮城県産金華イワシの炙り寿司、三陸産大粒カキフライなどを楽しむ予定。</p><div class="quickbar"><div class="quick"><b>♨️</b><small>ONSEN</small></div><div class="quick"><b>🥂</b><small>LOUNGE</small></div><div class="quick"><b>🍽️</b><small>BUFFET</small></div></div></div>
+    <div class="btns"><a class="btn" href="https://www.ooedoonsen.jp/taoya-akiu/" target="_blank">公式サイト</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=TAOYA%E7%A7%8B%E4%BF%9D" target="_blank">Google Maps</a></div><div class="reservation"><div class="reservation-label">RESERVATION NO.</div><div class="reservation-line"><span class="reservation-no" data-full="（家族メモで確認）">••••••••83</span><button class="mini-btn reveal">表示</button></div></div>
+  </div>
+  <div class="hotel-card">
+    <div class="mag-photo kanyo"><div class="mag-caption"><small>NIGHT 02 · MINAMISANRIKU</small><b>海を味わい、海に浸る</b></div></div><div class="night">NIGHT 02</div><h3>南三陸ホテル観洋</h3><div class="hotel-tag">海を見て、海を食べる。</div>
+    <div class="chips"><span class="chip">🌊 志津川湾</span><span class="chip">♨️ 絶景露天風呂</span><span class="chip">🐟 料理長おすすめ海鮮御膳</span><span class="chip">🚌 語り部バス</span></div><div class="mag-feature"><div class="mag-feature-label">EDITOR’S PICK · SANRIKU</div><div class="mag-feature-title">二夜目は、海そのものを味わう。</div><p class="mag-feature-text">予約したのは「料理長おすすめプラン」。旅の締めは、志津川湾の景色、海鮮御膳、朝の露天風呂、そして語り部体験へ。</p><div class="quickbar"><div class="quick"><b>🌊</b><small>OCEAN</small></div><div class="quick"><b>🐟</b><small>SEAFOOD</small></div><div class="quick"><b>🚌</b><small>STORY</small></div></div></div>
+    <div class="btns"><a class="btn" href="https://www.mkanyo.jp/" target="_blank">公式サイト</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E4%B8%89%E9%99%B8%E3%83%9B%E3%83%86%E3%83%AB%E8%A6%B3%E6%B4%8B" target="_blank">Google Maps</a></div><div class="reservation"><div class="reservation-label">RESERVATION NO.</div><div class="reservation-line"><span class="reservation-no" data-full="（家族メモで確認）">•••••••••••0088</span><button class="mini-btn reveal">表示</button></div><div class="editor-note">料理長おすすめプラン｜当館で最も料理内容が充実した海鮮御膳</div></div>
+  </div>
+</section>
+
+<section id="mission">
+  <div class="section-head"><div class="section-no">03</div><div class="section-title"><h2>MISSION</h2><p>家族でいくつクリアできるかな？</p></div></div>
+  <div class="missions" id="missionList">
+    <label class="mission"><input type="checkbox" data-id="m1"><span>🦈 サメを3種類見つける</span></label>
+    <label class="mission"><input type="checkbox" data-id="m2"><span>🧊 −20℃の世界を体験する</span></label>
+    <label class="mission"><input type="checkbox" data-id="m3"><span>🐟 一番おいしい海鮮を決める</span></label>
+    <label class="mission"><input type="checkbox" data-id="m4"><span>♨️ 海を見ながら温泉に入る</span></label>
+    <label class="mission"><input type="checkbox" data-id="m5"><span>🌿 ずんだを食べる</span></label>
+    <label class="mission"><input type="checkbox" data-id="m6"><span>📸 家族4人で最高の写真を撮る</span></label>
+    <label class="mission"><input type="checkbox" data-id="m7"><span>🚌 語り部さんの話を聞く</span></label>
+  </div>
+</section>
+
+<section id="gourmet">
+  <div class="section-head"><div class="section-no">04</div><div class="section-title"><h2>GOURMET</h2><p>宮城で食べたい！</p></div></div><div class="gourmet-lead">旅先の記憶は、味の記憶でもある。<br>仙台の牛タン、気仙沼の魚、三陸の鮑。家族で「いちばん」を決めよう。</div>
+  <div class="food-grid illustrated">
+    <div class="food-card">
+      <div class="food-illust"><span class="food-badge">SENDAI</span>
+        <svg viewBox="0 0 100 100" aria-label="牛タンのイラスト"><path d="M22 66c9-18 20-29 36-34 10-3 20 2 23 10 4 10-3 20-14 25-17 8-33 10-45 7z"/><path class="accent" d="M37 50c9 3 17 4 27 1M31 61c11 3 22 4 34 1"/><path d="M19 77h64"/></svg>
+      </div><div class="food-meta"><small>01 · SENDAI</small><strong>牛タン</strong><span>旅の最初に食べたい宮城の定番。</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-illust"><span class="food-badge">KESENNUMA</span>
+        <svg viewBox="0 0 100 100" aria-label="海鮮丼のイラスト"><path d="M19 57h62c-3 20-13 30-31 30S22 77 19 57z"/><path d="M25 57c4-14 13-20 25-20s21 6 25 20"/><path class="accent" d="M32 49c5-9 10-12 16-8 3-10 11-12 17-5 8-2 12 3 13 10"/><path d="M45 31c5-7 12-7 18-2"/></svg>
+      </div><div class="food-meta"><small>02 · KESENNUMA</small><strong>港の海鮮</strong><span>その日に出会った魚を、気仙沼で。</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-illust"><span class="food-badge">SANRIKU</span>
+        <svg viewBox="0 0 100 100" aria-label="鮑と牡蠣のイラスト"><path d="M18 61c6-21 22-31 41-28 14 2 24 12 23 24-1 15-17 27-37 27-15 0-25-8-27-23z"/><path d="M30 59c8-13 20-19 34-16 8 2 13 7 13 13"/><path class="accent" d="M28 67c12 5 28 5 42-1"/><circle cx="47" cy="52" r="2"/><circle cx="57" cy="49" r="2"/></svg>
+      </div><div class="food-meta"><small>03 · SANRIKU</small><strong>鮑・牡蠣</strong><span>海のごちそうは、二夜目の主役。</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-illust"><span class="food-badge">MIYAGI</span>
+        <svg viewBox="0 0 100 100" aria-label="ずんだ餅のイラスト"><ellipse cx="50" cy="71" rx="31" ry="12"/><path d="M30 67c1-13 9-20 20-20s19 7 20 20"/><path class="accent" d="M39 50c-3-10 4-18 13-15 4-9 15-8 18 1-1 9-10 15-20 14"/><path d="M50 46v-15M48 35c-8-2-12-7-13-13 7 0 13 3 16 9M52 35c8-2 12-7 13-13-7 0-13 3-16 9"/></svg>
+      </div><div class="food-meta"><small>04 · MIYAGI</small><strong>ずんだ</strong><span>おやつで見つけたら即チェック。</span></div>
+    </div>
+  </div>
+  <div class="miyagi-strip"><div><b>🥩</b><small>牛タン</small></div><div><b>🐟</b><small>海の幸</small></div><div><b>🦪</b><small>三陸</small></div><div><b>🌿</b><small>ずんだ</small></div></div>
+  <div class="story-grid">
+    <div class="story-card food-a"><small>DAY 1 · TAOYA</small><b>焼きたて<br>牛タン</b><span>最初の夜から宮城らしく。</span></div>
+    <div class="story-card food-b"><small>DAY 2 · KESENNUMA</small><b>港の<br>海鮮ランチ</b><span>夜に備えて、量はほどほどに。</span></div>
+    <div class="story-card fun-a"><small>DAY 2 · KIDS</small><b>サメと<br>−20℃</b><span>海の市で子どもタイム。</span></div>
+    <div class="story-card fun-b"><small>DAY 3 · MEMORY</small><b>語り部の<br>言葉</b><span>家族で知って、考える朝。</span></div>
+  </div>
+  <div class="family-note"><b>旅のルール</b><p>全部を予定どおり回ることより、家族4人が疲れすぎず楽しめることを優先。1歳の休憩や昼寝に合わせて、DAY 2は柔軟に。</p></div>
+</section>
+
+<section id="map">
+  <div class="photo-banner scenic" role="img" aria-label="南三陸の海をイメージした風景"><div class="sun"></div><div class="island island-a"></div><div class="island island-b"></div><div class="photo-copy"><small>MINAMISANRIKU</small><b>海を眺める、旅の時間。</b></div></div>
+  <div class="section-head"><div class="section-no">05</div><div class="section-title"><h2>MAP</h2><p>タップしてそのままナビへ</p></div></div>
+  <div class="map-list">
+    <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=TAOYA%E7%A7%8B%E4%BF%9D" target="_blank"><b>TAOYA秋保</b><span>OPEN ↗</span></a>
+    <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E4%B8%89%E9%99%B8%E3%81%95%E3%82%93%E3%81%95%E3%82%93%E5%95%86%E5%BA%97%E8%A1%97" target="_blank"><b>南三陸さんさん商店街</b><span>OPEN ↗</span></a>
+    <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=%E6%B0%97%E4%BB%99%E6%B2%BC%20%E6%B5%B7%E3%81%AE%E5%B8%82" target="_blank"><b>気仙沼 海の市</b><span>OPEN ↗</span></a>
+    <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E4%B8%89%E9%99%B8%E3%83%9B%E3%83%86%E3%83%AB%E8%A6%B3%E6%B4%8B" target="_blank"><b>南三陸ホテル観洋</b><span>OPEN ↗</span></a>
+    <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%A9%BA%E6%B8%AF" target="_blank"><b>仙台空港</b><span>OPEN ↗</span></a>
+  </div>
+</section>
+
+<section id="info">
+  <div class="section-head"><div class="section-no">06</div><div class="section-title"><h2>TRAVEL INFO</h2><p>予約情報をここにまとめる</p></div></div>
+  <div class="info">
+    <div class="info-row"><div class="info-label">FLIGHT ✈️</div><div class="info-value">10/4 仙台空港 15:20発</div></div>
+    <div class="info-row"><div class="info-label">RENT A CAR 🚙</div><div class="info-value">会社名・予約番号：未入力</div><div class="info-note">返却目安 12:30〜13:00</div></div>
+    <div class="info-row"><div class="info-label">HOTEL 01 🏨</div><div class="info-value">TAOYA秋保</div><div class="info-note">予約番号：<span class="reservation-no" data-full="（家族メモで確認）">••••••••83</span>　<button class="mini-btn reveal">表示</button><br>夕食時間：未入力</div></div>
+    <div class="info-row"><div class="info-label">HOTEL 02 🏨</div><div class="info-value">南三陸ホテル観洋</div><div class="info-note">料理長おすすめプラン<br>予約番号：<span class="reservation-no" data-full="（家族メモで確認）">•••••••••••0088</span>　<button class="mini-btn reveal">表示</button><br>夕食時間：未入力</div></div>
+    <div class="info-row"><div class="info-label">STORYTELLER BUS 🚌</div><div class="info-value">10/4 8:45〜9:45</div><div class="info-note">前日までに申込状況を確認</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="section-no">07</div><div class="section-title"><h2>MEMORIES</h2><p>旅行後は家族のWebアルバムに</p></div></div>
+  <div class="memory"><h3>OUR MIYAGI</h3><p>2026.10.2 ─ 10.4<br>またひとつ、家族の思い出が増えました。</p></div>
+</section>
+<footer>MIYAGI FAMILY TRIP 2026 · PRIVATE FAMILY PAGE</footer>
+<script>
+(function(){
+  function ready(fn){ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn)}else{fn()} }
+  ready(function(){
+    try{
+      var target = Date.UTC(2026,9,2,5,0,0); // 2026-10-02 14:00 JST
+      function tick(){
+        var diff=Math.max(0,target-Date.now());
+        var d=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000), m=Math.floor((diff%3600000)/60000), sec=Math.floor((diff%60000)/1000);
+        var ids={d:d,h:String(h).padStart(2,'0'),m:String(m).padStart(2,'0'),s:String(sec).padStart(2,'0')};
+        Object.keys(ids).forEach(function(k){var el=document.getElementById(k); if(el) el.textContent=ids[k]});
+        var fb=document.getElementById('countFallback'); if(fb) fb.textContent='旅行まであと '+d+'日 '+String(h).padStart(2,'0')+'時間';
+      }
+      tick(); window.setInterval(tick,1000);
+    }catch(e){}
+    document.querySelectorAll('.reveal').forEach(function(btn){btn.addEventListener('click',function(){var el=btn.parentElement.querySelector('.reservation-no'); if(!el)return; var showing=el.textContent===el.dataset.full; var tail=el.dataset.full.slice(-4); el.textContent=showing?'••••••••'+tail:el.dataset.full; btn.textContent=showing?'表示':'隠す';});});
+    document.querySelectorAll('.mission input').forEach(function(cb){
+      var key='miyagi_'+cb.dataset.id;
+      try{cb.checked=window.localStorage && localStorage.getItem(key)==='1';}catch(e){}
+      cb.addEventListener('change',function(){try{if(window.localStorage)localStorage.setItem(key,cb.checked?'1':'0')}catch(e){}});
+    });
+  });
+})();
+</script>
+<section id="family-quest" class="quest-wrap"><div class="quest-kicker">MIYAGI FAMILY QUEST</div><h2 class="quest-title">宮城をめぐる、7つのミッション。</h2><p class="quest-copy">できたミッションをタップ！ 全部クリアすると「MIYAGI MASTER」の称号があらわれます。</p><div class="quest-progress"><span id="questBar"></span></div><div class="quest-score"><span id="questCount">0</span> / 7 CLEAR</div><div class="mission-grid">
+<button class="mission-card" data-mission="shark"><span class="micon">🦈</span><span><strong>サメを3種類見つけろ！</strong><small>気仙沼でサメ博士になれるかな？</small></span></button>
+<button class="mission-card" data-mission="ice"><span class="micon">🧊</span><span><strong>−20℃の世界に潜入せよ！</strong><small>本日のBOSS「氷の水族館」を攻略。</small></span></button>
+<button class="mission-card" data-mission="fish"><span class="micon">🐟</span><span><strong>一番おいしい魚を決めろ！</strong><small>家族の宮城No.1グルメを選ぼう。</small></span></button>
+<button class="mission-card" data-mission="onsen"><span class="micon">♨️</span><span><strong>海が見える露天風呂を攻略！</strong><small>志津川湾を眺めながら温泉へ。</small></span></button>
+<button class="mission-card" data-mission="zunda"><span class="micon">🌿</span><span><strong>ずんだを発見せよ！</strong><small>スイーツでもシェイクでもOK。</small></span></button>
+<button class="mission-card" data-mission="photo"><span class="micon">📸</span><span><strong>家族4人のベストショット！</strong><small>旅の表紙にしたい1枚を撮ろう。</small></span></button>
+<button class="mission-card" data-mission="story"><span class="micon">🚌</span><span><strong>初めて知ったことを1つ覚えよう</strong><small>語り部さんのお話から、未来に持ち帰る発見を。</small></span></button>
+</div><div id="masterCard" class="master-card"><div class="trophy">🏆</div><h3>MIYAGI MASTER 認定！</h3><p>7つのミッション、ぜんぶクリア！</p></div></section><script>(function(){const cards=[...document.querySelectorAll('.mission-card')];if(!cards.length)return;const key='miyagiFamilyQuestV1';let done={};try{done=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}function render(){let n=0;cards.forEach(c=>{let ok=!!done[c.dataset.mission];c.classList.toggle('done',ok);if(ok)n++});document.getElementById('questCount').textContent=n;document.getElementById('questBar').style.width=(n/7*100)+'%';document.getElementById('masterCard').classList.toggle('show',n===7)}cards.forEach(c=>c.onclick=()=>{done[c.dataset.mission]=!done[c.dataset.mission];try{localStorage.setItem(key,JSON.stringify(done))}catch(e){}render()});render()})();</script>
+<script>
+(function(){
+  // 旅行開始: 2026-10-02 14:00 JST
+  const target = new Date("2026-10-02T14:00:00+09:00").getTime();
+  const dEl = document.getElementById("cdDays");
+  const hEl = document.getElementById("cdHours");
+  const mEl = document.getElementById("cdMinutes");
+  const sEl = document.getElementById("cdSeconds");
+  const fb = document.getElementById("countdownFallback");
+
+  function tick(){
+    const now = Date.now();
+    let diff = target - now;
+    if(diff <= 0){
+      dEl.textContent = "00"; hEl.textContent = "00";
+      mEl.textContent = "00"; sEl.textContent = "00";
+      fb.textContent = "宮城旅行 START！";
+      return;
+    }
+    const days = Math.floor(diff / 86400000); diff %= 86400000;
+    const hours = Math.floor(diff / 3600000); diff %= 3600000;
+    const minutes = Math.floor(diff / 60000); diff %= 60000;
+    const seconds = Math.floor(diff / 1000);
+    dEl.textContent = String(days).padStart(2,"0");
+    hEl.textContent = String(hours).padStart(2,"0");
+    mEl.textContent = String(minutes).padStart(2,"0");
+    sEl.textContent = String(seconds).padStart(2,"0");
+    fb.textContent = "2026.10.2 14:00 START";
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+
+</body>
+</html>
