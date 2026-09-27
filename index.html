@@ -231,18 +231,29 @@ button,a,.mission-card{overflow-wrap:anywhere}
 }
 </style>
 
+
+<style>
+.quiz-progress{height:12px;border-radius:999px;background:rgba(21,53,77,.10);overflow:hidden;margin:12px 0 5px}
+.quiz-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#e5b94d,#4e9ec4);transition:width .35s ease}
+.quiz-progress-text{text-align:right;font-size:12px;font-weight:800;color:#36546a;margin-bottom:12px}
+.next-quiz-btn{margin-left:8px;background:#fff!important;color:#15354d!important;border:1px solid rgba(21,53,77,.15)!important}
+@media(max-width:430px){.daily-btn{margin-top:8px}.next-quiz-btn{margin-left:4px}}
+</style>
 </head>
 <body>
 <div style="margin:18px 16px;padding:12px 14px;border-radius:14px;background:#f5f7f8;color:#59666f;font-size:12px;line-height:1.6">
   🔒 公開版のため、ホテル予約番号などの個人用予約情報は掲載していません。
 </div>
 <section class="daily-adventure" id="dailyAdventure">
-  <div class="daily-kicker">TODAY'S SECRET · 毎日かわる</div>
-  <h2 class="daily-title">きょうの<ruby>宮城<rt>みやぎ</rt></ruby>クイズ</h2>
+  <div class="daily-kicker">MIYAGI QUIZ BOOK · 30もん</div>
+  <h2 class="daily-title">みやぎクイズずかん</h2>
+  <div class="quiz-progress"><span id="quizProgressBar"></span></div>
+  <div class="quiz-progress-text"><b id="quizSolved">0</b> / 30 もんクリア！</div>
   <div class="daily-question" id="dailyQuestion">もんだいをえらんでいるよ…</div>
   <button class="daily-btn" id="dailyReveal" type="button">こたえを見る 👀</button>
   <div class="daily-answer" id="dailyAnswer"></div>
-  <div class="daily-sub">あした見ると、ちがうもんだいが出るかも！</div>
+  <button class="daily-btn next-quiz-btn" id="nextQuiz" type="button">つぎのもんだい ➜</button>
+  <div class="daily-sub" id="quizMessage">ぜんぶのもんだいにちょうせんしよう！</div>
 </section>
 
 
@@ -431,21 +442,83 @@ button,a,.mission-card{overflow-wrap:anywhere}
 
 <script>
 (function(){
-  const quizzes=[
-    ['みやぎにある、島がたくさん見えるゆうめいな場所は？','松島（まつしま）！ 海と島のけしきがとてもきれいです。'],
-    ['ずんだは、何の豆からつくるでしょう？','えだ豆！ ゆでたえだ豆をつぶしてつくります。'],
-    ['仙台（せんだい）でゆうめいな武将（ぶしょう）はだれ？','伊達政宗（だてまさむね）！ かぶとの大きな三日月が目じるしです。'],
-    ['南三陸（みなみさんりく）のホテルの前に広がる海は？','志津川湾（しづがわわん）！ 朝のおふろからも見られます。'],
-    ['気仙沼（けせんぬま）の「氷の水族館」は何℃？','−20℃！ あたたかい服をかりて入ります。'],
-    ['仙台（せんだい）でゆうめいなお肉の食べものは？','牛タン！ ぶあつく切って、やいて食べます。'],
-    ['気仙沼（けせんぬま）で3しゅるい見つける生きものは？','サメ！ シャークミュージアムでさがしてみよう。'],
-    ['さいごの日の朝、町のお話を聞く体験は？','語り部（かたりべ）バス！ 南三陸のことを聞いて知る時間です。']
-  ];
-  const now=new Date();
-  const start=new Date(now.getFullYear(),0,0); const day=Math.floor((now-start)/86400000);
-  const q=quizzes[day%quizzes.length];
-  const qe=document.getElementById('dailyQuestion'), ae=document.getElementById('dailyAnswer'), btn=document.getElementById('dailyReveal');
-  if(qe&&ae&&btn){qe.textContent=q[0];ae.textContent=q[1];btn.addEventListener('click',()=>{ae.classList.toggle('show');btn.textContent=ae.classList.contains('show')?'こたえをかくす 🙈':'こたえを見る 👀';});}
+  const quizzes=[["みやぎで、島がたくさん見えるゆうめいな場所は？", "松島（まつしま）！ たくさんの島と海のけしきがきれいです。"], ["ずんだは、何の豆からつくるでしょう？", "えだ豆！ ゆでたえだ豆をつぶしてつくります。"], ["仙台（せんだい）でゆうめいな武将（ぶしょう）はだれ？", "伊達政宗（だてまさむね）！ 大きな三日月のかぶとが目じるしです。"], ["南三陸（みなみさんりく）のホテルの前に広がる海は？", "志津川湾（しづがわわん）！ おふろから海を見られます。"], ["気仙沼（けせんぬま）の「氷の水族館」は何℃？", "−20℃！ とってもさむい世界を体験できます。"], ["仙台（せんだい）でゆうめいなお肉の食べものは？", "牛タン！ ぶあつく切って、やいて食べるのがゆうめいです。"], ["気仙沼（けせんぬま）でゆうめいな海の生きものは？", "サメ！ 気仙沼はサメと深いつながりがあります。"], ["さいごの日の朝、町のお話を聞く体験は？", "語り部（かたりべ）バス！ 南三陸のことを聞いて学びます。"], ["宮城県（みやぎけん）の県庁所在地（けんちょうしょざいち）は？", "仙台市（せんだいし）！ 宮城県でいちばん人口が多いまちです。"], ["仙台（せんだい）の夏のおまつりで、大きなかざりがゆれるのは？", "仙台七夕（せんだいたなばた）まつり！ 長い吹き流しがきれいです。"], ["伊達政宗（だてまさむね）のかぶとについている形は？", "三日月（みかづき）！ サイトの表紙にもかくれています。"], ["秋保（あきう）で楽しみにしているものは？", "温泉（おんせん）！ 1日目はTAOYA秋保に泊まります。"], ["1日目に泊まるホテルはどこ？", "TAOYA秋保（たおや あきう）！ 家族旅行さいしょのホテルです。"], ["2日目に泊まるホテルはどこ？", "南三陸ホテル観洋（みなみさんりくホテルかんよう）！ 海が見えるホテルです。"], ["2日目のお昼ごろに行く予定の町は？", "気仙沼（けせんぬま）！ 海の市にも行く予定です。"], ["気仙沼（けせんぬま）の海の市で食べたいものは？", "海鮮（かいせん）！ お魚を楽しみたいね。"], ["「シャーク」は日本語で何という？", "サメ！ シャークミュージアムでいろいろなサメをさがそう。"], ["海が見える外のおふろを何という？", "露天風呂（ろてんぶろ）！ 南三陸で楽しむ予定です。"], ["宮城（みやぎ）の名物、緑色のあまい食べものは？", "ずんだ！ ずんだもちやシェイクもあります。"], ["牛タンの「タン」は、牛のどの部分？", "舌（した）！ 英語では tongue といいます。"], ["10月2日、家族3人が仙台空港（せんだいくうこう）に着くのは何時？", "13:05！ そのあと14:00に全員集合です。"], ["10月2日、全員がそろう予定は何時？", "14:00！ ここから家族旅行スタートです。"], ["旅行は何泊（なんぱく）する？", "2泊（にはく）！ 10月2日から4日までです。"], ["家族旅行はぜんぶで何人？", "4人！ 大人2人、9歳1人、1歳1人です。"], ["帰りの飛行機が仙台を出る予定時刻は？", "15:20！ 最終日は飛行機の時間にも気をつけよう。"], ["パパが10月1日に乗る飛行機の便名は？", "ANA NH361便！ 名古屋（中部）から仙台へ向かいます。"], ["パパの10月1日の飛行機は、名古屋を何時に出る？", "8:15！ 仙台には9:30に着く予定です。"], ["海の水は、しょっぱい？ あまい？", "しょっぱい！ 海の水には塩などがとけています。"], ["温泉（おんせん）は、ふつうのお水よりあたたかいことが多い？", "そう！ 地下からわく、あたたかいお湯を楽しみます。"], ["旅行で家族4人の写真を撮るミッションの名前は？", "「家族4人でさいこうの写真！」ミッション！ 思い出の1枚を撮ろう。"]];
+  const orderKey='miyagiQuizOrderV2';
+  const posKey='miyagiQuizPosV2';
+  const solvedKey='miyagiQuizSolvedV2';
+
+  let order=[], pos=0, solved=[];
+  try{ order=JSON.parse(localStorage.getItem(orderKey)||'[]'); }catch(e){}
+  try{ pos=parseInt(localStorage.getItem(posKey)||'0',10)||0; }catch(e){}
+  try{ solved=JSON.parse(localStorage.getItem(solvedKey)||'[]'); }catch(e){}
+
+  function shuffle(a){
+    for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    return a;
+  }
+  if(!Array.isArray(order)||order.length!==quizzes.length){
+    order=shuffle([...Array(quizzes.length).keys()]);
+    pos=0;
+    try{localStorage.setItem(orderKey,JSON.stringify(order));localStorage.setItem(posKey,'0')}catch(e){}
+  }
+
+  const qe=document.getElementById('dailyQuestion');
+  const ae=document.getElementById('dailyAnswer');
+  const reveal=document.getElementById('dailyReveal');
+  const next=document.getElementById('nextQuiz');
+  const solvedEl=document.getElementById('quizSolved');
+  const bar=document.getElementById('quizProgressBar');
+  const msg=document.getElementById('quizMessage');
+  let answerShown=false;
+
+  function progress(){
+    const unique=[...new Set(solved)].filter(x=>x>=0&&x<quizzes.length);
+    solved=unique;
+    if(solvedEl) solvedEl.textContent=unique.length;
+    if(bar) bar.style.width=(unique.length/quizzes.length*100)+'%';
+    if(msg){
+      if(unique.length===quizzes.length) msg.textContent='🏆 30もんぜんぶクリア！ みやぎクイズマスター！';
+      else msg.textContent='あと '+(quizzes.length-unique.length)+'もん！ ぜんぶのもんだいにちょうせんしよう。';
+    }
+    try{localStorage.setItem(solvedKey,JSON.stringify(unique))}catch(e){}
+  }
+
+  function showQuestion(){
+    if(pos>=order.length){
+      order=shuffle([...Array(quizzes.length).keys()]);
+      pos=0;
+      try{localStorage.setItem(orderKey,JSON.stringify(order))}catch(e){}
+    }
+    const idx=order[pos], q=quizzes[idx];
+    if(qe) qe.textContent='Q'+(pos+1)+'　'+q[0];
+    if(ae){ae.textContent=q[1];ae.classList.remove('show');}
+    if(reveal) reveal.textContent='こたえを見る 👀';
+    answerShown=false;
+    progress();
+  }
+
+  if(reveal) reveal.addEventListener('click',()=>{
+    const idx=order[pos];
+    answerShown=!answerShown;
+    if(ae) ae.classList.toggle('show',answerShown);
+    reveal.textContent=answerShown?'こたえをかくす 🙈':'こたえを見る 👀';
+    if(answerShown && !solved.includes(idx)){
+      solved.push(idx); progress();
+    }
+  });
+
+  if(next) next.addEventListener('click',()=>{
+    pos++;
+    if(pos>=order.length){
+      order=shuffle([...Array(quizzes.length).keys()]);
+      pos=0;
+      try{localStorage.setItem(orderKey,JSON.stringify(order))}catch(e){}
+    }
+    try{localStorage.setItem(posKey,String(pos))}catch(e){}
+    showQuestion();
+  });
+
+  showQuestion();
 })();
 </script>
 </body>
