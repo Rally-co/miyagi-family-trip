@@ -239,6 +239,22 @@ button,a,.mission-card{overflow-wrap:anywhere}
 .next-quiz-btn{margin-left:8px;background:#fff!important;color:#15354d!important;border:1px solid rgba(21,53,77,.15)!important}
 @media(max-width:430px){.daily-btn{margin-top:8px}.next-quiz-btn{margin-left:4px}}
 </style>
+<style id="quiz-special-upgrade">
+#dailyAdventure [hidden]{display:none!important}
+#dailyAdventure.is-special{background:linear-gradient(135deg,#fff0bc,#f3eaff 65%,#e5f8ff);border:2px solid #bc8c2d}
+.special-label{text-align:center;color:#70420b;font-size:15px;font-weight:900;letter-spacing:.06em;animation:quiz-pop .45s ease-out}
+.special-art{font-size:clamp(36px,11vw,58px);text-align:center;background:#ffffffb8;border-radius:18px;padding:16px 8px;margin:12px 0;line-height:1.5;white-space:pre-line}
+#dailyAdventure:after{pointer-events:none}
+#dailyAdventure .daily-btn{min-height:48px;cursor:pointer;max-width:100%;white-space:normal;touch-action:manipulation}
+#dailyAdventure .daily-btn:disabled{opacity:.55;cursor:default}
+#dailyAdventure .daily-btn:focus-visible{outline:3px solid #996508;outline-offset:3px}
+#dailyAdventure .reset-quiz-btn{display:block;background:#71501a;margin-top:18px}
+@keyframes quiz-pop{from{transform:scale(.9);opacity:.3}to{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){#dailyAdventure *{animation:none!important;transition:none!important}}
+</style>
+<style id="flight-styles">
+#flight{scroll-margin-top:64px}.flight-ticket{background:#fff;border:1px solid #ded8ca;border-radius:22px;margin:0 0 20px;overflow:hidden;box-shadow:0 10px 30px #1929390d}.flight-top{background:var(--navy);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.flight-top time{font-weight:800;letter-spacing:.04em}.flight-top span{font-size:13px}.flight-body{padding:20px}.flight-body h3{font-size:18px;color:var(--navy);margin:0 0 18px;line-height:1.7}.flight-route{display:grid;grid-template-columns:1fr 28px 1fr;align-items:center;gap:6px}.flight-airport{font-size:14px;font-weight:700;color:var(--navy)}.flight-route strong{display:block;font-size:clamp(28px,8vw,38px);line-height:1.3;color:var(--navy);font-variant-numeric:tabular-nums}.flight-route small{font-size:12px;color:#596775}.flight-arrow{text-align:center;color:var(--gold);font-size:22px}.flight-route>div:last-child{text-align:right}.flight-details{border-top:2px dashed #ded8ca;padding:16px 20px;background:#fbfaf7;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:#405367}.flight-details b{color:var(--navy)}.flight-meet{margin:0;padding:15px 20px;background:#e7f1f1;color:#173f49;font-size:14px;font-weight:700}.flight-restriction{margin:0;padding:12px 20px;background:#fff1db;color:#714914;font-size:13px}.flight-caption{font-size:12px;color:var(--muted)}
+</style>
 </head>
 <body>
 <div style="margin:18px 16px;padding:12px 14px;border-radius:14px;background:#f5f7f8;color:#59666f;font-size:12px;line-height:1.6">
@@ -249,11 +265,14 @@ button,a,.mission-card{overflow-wrap:anywhere}
   <h2 class="daily-title">みやぎクイズずかん</h2>
   <div class="quiz-progress"><span id="quizProgressBar"></span></div>
   <div class="quiz-progress-text"><b id="quizSolved">0</b> / 30 もんクリア！</div>
-  <div class="daily-question" id="dailyQuestion">もんだいをえらんでいるよ…</div>
+  <p class="daily-sub">全30もん・絵で考えるスペシャルが5もん！</p>
+  <div id="specialQuiz" hidden><div class="special-label">⭐SPECIAL QUIZ⭐</div><div class="special-art" id="specialArt"></div></div>
+  <div class="daily-question" id="dailyQuestion" tabindex="-1">もんだいをえらんでいるよ…</div>
   <button class="daily-btn" id="dailyReveal" type="button">こたえを見る 👀</button>
-  <div class="daily-answer" id="dailyAnswer"></div>
+  <div class="daily-answer" id="dailyAnswer" aria-live="polite"></div>
   <button class="daily-btn next-quiz-btn" id="nextQuiz" type="button">つぎのもんだい ➜</button>
-  <div class="daily-sub" id="quizMessage">ぜんぶのもんだいにちょうせんしよう！</div>
+  <button class="daily-btn reset-quiz-btn" id="resetQuiz" type="button" hidden>もういちどあそぶ 🔄</button>
+  <div class="daily-sub" id="quizMessage" role="status">ぜんぶのもんだいにちょうせんしよう！</div>
 </section>
 
 
@@ -276,8 +295,10 @@ button,a,.mission-card{overflow-wrap:anywhere}
   </div>
 </header>
 <nav>
-  <a href="#schedule">SCHEDULE</a><a href="#hotel">HOTEL</a><a href="#family-quest">QUEST</a><a href="#gourmet">GOURMET</a><a href="#map">MAP</a><a href="#info">INFO</a>
+  <a href="#flight">FLIGHT</a><a href="#schedule">SCHEDULE</a><a href="#hotel">HOTEL</a><a href="#family-quest">QUEST</a><a href="#gourmet">GOURMET</a><a href="#map">MAP</a><a href="#info">INFO</a>
 </nav>
+
+<section id="flight" aria-labelledby="flight-heading"><div class="section-head"><div class="section-no">✈</div><div class="section-title"><h2 id="flight-heading">FLIGHT</h2><p>ひこうきの時間をチェック！</p></div></div><article class="flight-ticket"><div class="flight-top"><time datetime="2026-10-01">2026.10.01（木）</time><span>ANA NH361</span></div><div class="flight-body"><h3>👨 パパ、ひと足先に宮城へ</h3><div class="flight-route"><div><div class="flight-airport"><ruby>名古屋<rt>なごや</rt></ruby>（<ruby>中部<rt>ちゅうぶ</rt></ruby>）</div><strong>8:15</strong><small>出発（しゅっぱつ）</small></div><div class="flight-arrow" aria-label="から">→</div><div><div class="flight-airport"><ruby>仙台<rt>せんだい</rt></ruby></div><strong>9:30</strong><small>到着（とうちゃく）</small></div></div></div><div class="flight-details"><span>出発ターミナル <b>1</b></span><span>ANA WINGS 運航（うんこう）</span><span>エコノミー</span></div></article><article class="flight-ticket"><div class="flight-top"><time datetime="2026-10-02">2026.10.02（金）</time><span>ANA NH363</span></div><div class="flight-body"><h3>かずみ・さとわ・みひろ<br>3人でパパのいる宮城へ！</h3><div class="flight-route"><div><div class="flight-airport"><ruby>名古屋<rt>なごや</rt></ruby>（<ruby>中部<rt>ちゅうぶ</rt></ruby>）</div><strong>11:50</strong><small>出発（しゅっぱつ）</small></div><div class="flight-arrow" aria-label="から">→</div><div><div class="flight-airport"><ruby>仙台<rt>せんだい</rt></ruby></div><strong>13:05</strong><small>到着（とうちゃく）</small></div></div></div><div class="flight-details"><span>出発ターミナル <b>1</b></span><span>座席（ざせき） <b>17C・17D</b></span></div><p class="flight-meet">🚙 14:00 みんなで合流（ごうりゅう）！<br>家族旅行 START</p></article><article class="flight-ticket"><div class="flight-top"><time datetime="2026-10-04">2026.10.04（日）</time><span>IBEX FW024</span></div><div class="flight-body"><h3>家族みんなで名古屋へ</h3><div class="flight-route"><div><div class="flight-airport"><ruby>仙台<rt>せんだい</rt></ruby></div><strong>15:20</strong><small>出発（しゅっぱつ）</small></div><div class="flight-arrow" aria-label="から">→</div><div><div class="flight-airport"><ruby>名古屋<rt>なごや</rt></ruby>（<ruby>中部<rt>ちゅうぶ</rt></ruby>）</div><strong>16:30</strong><small>到着（とうちゃく）</small></div></div></div><div class="flight-details"><span>I-スペシャル（エコノミー）</span></div><p class="flight-restriction">便・日程変更不可<br>ひこうきの便と日にちは変えられません。</p></article><p class="flight-caption">旅のしおり用のカードです。搭乗券（とうじょうけん）としては使えません。</p></section>
 
 <section id="schedule">
   <div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>SCHEDULE</h2><p>3日間の家族旅行</p></div></div><p class="editorial">旅の始まりは、仕事を終えた<ruby>仙台<rt>せんだい</rt></ruby>から。<ruby>秋保<rt>あきう</rt></ruby>の湯でほどけて、翌日は海へ。三陸の景色と味、そして<ruby>語り部<rt>かたりべ</rt></ruby>の言葉まで、家族4人でゆっくり受け取る3日間。</p><div class="quote">「たくさん回る」より、<br>家族でちゃんと味わう3日間。</div>
@@ -287,6 +308,7 @@ button,a,.mission-card{overflow-wrap:anywhere}
     <div class="day-top"><div><div class="day-label">DAY 1 · 10/2 FRI</div><h3><ruby>秋保<rt>あきう</rt></ruby>へ</h3></div><div>♨️</div></div>
     <div class="day-theme">何もしない贅沢から、旅を始める。</div>
     <div class="timeline">
+      <div class="titem"><div class="time">11:50</div><div class="action">かずみ・さとわ・みひろが <ruby>名古屋<rt>なごや</rt></ruby>（<ruby>中部<rt>ちゅうぶ</rt></ruby>） を出発 ✈️</div><div class="note">ANA NH363 → 13:05 仙台着</div></div>
       <div class="titem"><div class="time">12:30</div><div class="action">第54回 <ruby>青年経営者全国交流会<rt>せいねんけいえいしゃ ぜんこくこうりゅうかい</rt></ruby> in <ruby>宮城<rt>みやぎ</rt></ruby> 終了</div></div>
       <div class="titem"><div class="time">13:05</div><div class="action">かずみ・さとわ・みひろが <ruby>仙台空港<rt>せんだいくうこう</rt></ruby> に到着 ✈️</div></div>
       <div class="titem"><div class="time">14:00</div><div class="action">全員合流！ 家族旅行 START 🚙</div><div class="note">ここから家族旅行スタート。</div></div>
@@ -321,7 +343,8 @@ button,a,.mission-card{overflow-wrap:anywhere}
       <div class="titem"><div class="time">8:45〜9:45</div><div class="action"><ruby>語り部<rt>かたりべ</rt></ruby>バス</div></div>
       <div class="titem"><div class="time">10:00頃</div><div class="action">ホテル出発 → <ruby>仙台<rt>せんだい</rt></ruby>空港へ</div></div>
       <div class="titem"><div class="time">12:30〜13:00頃</div><div class="action">レンタカー返却目安</div></div>
-      <div class="titem"><div class="time">15:20</div><div class="action"><ruby>仙台<rt>せんだい</rt></ruby>空港 発 ✈️</div></div>
+      <div class="titem"><div class="time">15:20</div><div class="action"><ruby>仙台<rt>せんだい</rt></ruby>空港 発 ✈️</div><div class="note">IBEX FW024</div></div>
+      <div class="titem"><div class="time">16:30</div><div class="action"><ruby>名古屋<rt>なごや</rt></ruby>（<ruby>中部<rt>ちゅうぶ</rt></ruby>） に到着 ✈️</div></div>
     </div>
   </article>
 </section>
@@ -402,7 +425,7 @@ button,a,.mission-card{overflow-wrap:anywhere}
 <section id="info">
   <div class="section-head"><div class="section-no">06</div><div class="section-title"><h2>TRAVEL INFO</h2><p>予約情報をここにまとめる</p></div></div>
   <div class="info">
-    <div class="info-row"><div class="info-label">FLIGHT ✈️</div><div class="info-value">10/4 仙台空港 15:20発</div></div>
+    <div class="info-row"><div class="info-label">FLIGHT ✈️</div><div class="info-value"><a href="#flight">3便の時間・座席はこちら → FLIGHT</a></div></div>
     <div class="info-row"><div class="info-label">RENT A CAR 🚙</div><div class="info-value">会社名・予約番号：未入力</div><div class="info-note">返却目安 12:30〜13:00</div></div>
     <div class="info-row"><div class="info-label">HOTEL 01 🏨</div><div class="info-value">TAOYA秋保</div><div class="info-note">予約番号：<span class="reservation-no" data-full="（家族メモで確認）">••••••••83</span>　<button class="mini-btn reveal">表示</button><br>夕食時間：未入力</div></div>
     <div class="info-row"><div class="info-label">HOTEL 02 🏨</div><div class="info-value">南三陸ホテル観洋</div><div class="info-note">料理長おすすめプラン<br>予約番号：<span class="reservation-no" data-full="（家族メモで確認）">•••••••••••0088</span>　<button class="mini-btn reveal">表示</button><br>夕食時間：未入力</div></div>
@@ -443,81 +466,70 @@ button,a,.mission-card{overflow-wrap:anywhere}
 <script>
 (function(){
   const quizzes=[["みやぎで、島がたくさん見えるゆうめいな場所は？", "松島（まつしま）！ たくさんの島と海のけしきがきれいです。"], ["ずんだは、何の豆からつくるでしょう？", "えだ豆！ ゆでたえだ豆をつぶしてつくります。"], ["仙台（せんだい）でゆうめいな武将（ぶしょう）はだれ？", "伊達政宗（だてまさむね）！ 大きな三日月のかぶとが目じるしです。"], ["南三陸（みなみさんりく）のホテルの前に広がる海は？", "志津川湾（しづがわわん）！ おふろから海を見られます。"], ["気仙沼（けせんぬま）の「氷の水族館」は何℃？", "−20℃！ とってもさむい世界を体験できます。"], ["仙台（せんだい）でゆうめいなお肉の食べものは？", "牛タン！ ぶあつく切って、やいて食べるのがゆうめいです。"], ["気仙沼（けせんぬま）でゆうめいな海の生きものは？", "サメ！ 気仙沼はサメと深いつながりがあります。"], ["さいごの日の朝、町のお話を聞く体験は？", "語り部（かたりべ）バス！ 南三陸のことを聞いて学びます。"], ["宮城県（みやぎけん）の県庁所在地（けんちょうしょざいち）は？", "仙台市（せんだいし）！ 宮城県でいちばん人口が多いまちです。"], ["仙台（せんだい）の夏のおまつりで、大きなかざりがゆれるのは？", "仙台七夕（せんだいたなばた）まつり！ 長い吹き流しがきれいです。"], ["伊達政宗（だてまさむね）のかぶとについている形は？", "三日月（みかづき）！ サイトの表紙にもかくれています。"], ["秋保（あきう）で楽しみにしているものは？", "温泉（おんせん）！ 1日目はTAOYA秋保に泊まります。"], ["1日目に泊まるホテルはどこ？", "TAOYA秋保（たおや あきう）！ 家族旅行さいしょのホテルです。"], ["2日目に泊まるホテルはどこ？", "南三陸ホテル観洋（みなみさんりくホテルかんよう）！ 海が見えるホテルです。"], ["2日目のお昼ごろに行く予定の町は？", "気仙沼（けせんぬま）！ 海の市にも行く予定です。"], ["気仙沼（けせんぬま）の海の市で食べたいものは？", "海鮮（かいせん）！ お魚を楽しみたいね。"], ["「シャーク」は日本語で何という？", "サメ！ シャークミュージアムでいろいろなサメをさがそう。"], ["海が見える外のおふろを何という？", "露天風呂（ろてんぶろ）！ 南三陸で楽しむ予定です。"], ["宮城（みやぎ）の名物、緑色のあまい食べものは？", "ずんだ！ ずんだもちやシェイクもあります。"], ["牛タンの「タン」は、牛のどの部分？", "舌（した）！ 英語では tongue といいます。"], ["10月2日、家族3人が仙台空港（せんだいくうこう）に着くのは何時？", "13:05！ そのあと14:00に全員集合です。"], ["10月2日、全員がそろう予定は何時？", "14:00！ ここから家族旅行スタートです。"], ["旅行は何泊（なんぱく）する？", "2泊（にはく）！ 10月2日から4日までです。"], ["家族旅行はぜんぶで何人？", "4人！ 大人2人、9歳1人、1歳1人です。"], ["帰りの飛行機が仙台を出る予定時刻は？", "15:20！ 最終日は飛行機の時間にも気をつけよう。"], ["パパが10月1日に乗る飛行機の便名は？", "ANA NH361便！ 名古屋（中部）から仙台へ向かいます。"], ["パパの10月1日の飛行機は、名古屋を何時に出る？", "8:15！ 仙台には9:30に着く予定です。"], ["海の水は、しょっぱい？ あまい？", "しょっぱい！ 海の水には塩などがとけています。"], ["温泉（おんせん）は、ふつうのお水よりあたたかいことが多い？", "そう！ 地下からわく、あたたかいお湯を楽しみます。"], ["旅行で家族4人の写真を撮るミッションの名前は？", "「家族4人でさいこうの写真！」ミッション！ 思い出の1枚を撮ろう。"]];
-  const orderKey='miyagiQuizOrderV2';
-  const posKey='miyagiQuizPosV2';
-  const solvedKey='miyagiQuizSolvedV2';
-
-  let order=[], pos=0, solved=[];
-  try{ order=JSON.parse(localStorage.getItem(orderKey)||'[]'); }catch(e){}
-  try{ pos=parseInt(localStorage.getItem(posKey)||'0',10)||0; }catch(e){}
-  try{ solved=JSON.parse(localStorage.getItem(solvedKey)||'[]'); }catch(e){}
-
-  function shuffle(a){
-    for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-    return a;
-  }
-  if(!Array.isArray(order)||order.length!==quizzes.length){
-    order=shuffle([...Array(quizzes.length).keys()]);
-    pos=0;
-    try{localStorage.setItem(orderKey,JSON.stringify(order));localStorage.setItem(posKey,'0')}catch(e){}
-  }
-
-  const qe=document.getElementById('dailyQuestion');
-  const ae=document.getElementById('dailyAnswer');
-  const reveal=document.getElementById('dailyReveal');
-  const next=document.getElementById('nextQuiz');
-  const solvedEl=document.getElementById('quizSolved');
-  const bar=document.getElementById('quizProgressBar');
-  const msg=document.getElementById('quizMessage');
+  // Keep all 30 stable question IDs and the existing V2 progress.
+  const specials={
+    10:{art:'🌙  ⭐  ☀️',q:'だてまさむねの かぶとのかざりは、どの形？ 左・まん中・右からえらぼう！',a:'左の 🌙 三日月（みかづき）！ だてまさむねのかぶとは、大きな三日月が目じるしだよ。'},
+    16:{art:'🐬  🦈  🐙',q:'「シャーク」はどの生きもの？ 左・まん中・右からえらぼう！',a:'まん中の 🦈 サメ！ けせんぬまで、いろいろなサメを見つけよう。'},
+    18:{art:'🫛 ➜ 🥣 ➜ 🟢',q:'えだ豆をつぶして、あまくしたよ。この緑色のあんの名前は？',a:'ずんだ！ えだ豆をつぶしてつくるよ。おもちやシェイクでも楽しめるね。'},
+    28:{art:'♨️  🅿️  🚻',q:'あたたかいお湯で、ほっとひと休み。おんせんのマークはどれ？',a:'左の ♨️ がおんせんのマーク！ 上にのびる3本の線は、ゆげをあらわしているよ。'},
+    19:{art:'🐄 ＋ 👅 ➜ 🍽️',q:'牛（うし）＋ した。このヒントがあらわす、せんだいでゆうめいな料理は？',a:'牛タン（ぎゅうタン）！ 「タン」は、したのこと。やいて食べる料理がゆうめいだよ。'}
+  };
+  const orderKey='miyagiQuizOrderV2', posKey='miyagiQuizPosV2', solvedKey='miyagiQuizSolvedV2';
+  const ids=Array.from({length:quizzes.length},(_,i)=>i);
+  const validId=x=>Number.isInteger(x)&&x>=0&&x<quizzes.length;
+  function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch(e){return fallback}}
+  function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+  let order=read(orderKey,[]),pos=read(posKey,0),solved=read(solvedKey,[]);
+  if(!Array.isArray(order)||order.length!==ids.length||new Set(order).size!==ids.length||!order.every(validId)){order=shuffle([...ids]);pos=0}
+  if(!Number.isInteger(pos)||pos<0||pos>=ids.length)pos=0;
+  solved=Array.isArray(solved)?[...new Set(solved.filter(validId))]:[];
+  const el=id=>document.getElementById(id);
+  const qe=el('dailyQuestion'),ae=el('dailyAnswer'),reveal=el('dailyReveal'),next=el('nextQuiz'),reset=el('resetQuiz');
   let answerShown=false;
-
+  function save(){try{localStorage.setItem(orderKey,JSON.stringify(order));localStorage.setItem(posKey,String(pos));localStorage.setItem(solvedKey,JSON.stringify(solved))}catch(e){}}
   function progress(){
-    const unique=[...new Set(solved)].filter(x=>x>=0&&x<quizzes.length);
-    solved=unique;
-    if(solvedEl) solvedEl.textContent=unique.length;
-    if(bar) bar.style.width=(unique.length/quizzes.length*100)+'%';
-    if(msg){
-      if(unique.length===quizzes.length) msg.textContent='🏆 30もんぜんぶクリア！ みやぎクイズマスター！';
-      else msg.textContent='あと '+(quizzes.length-unique.length)+'もん！ ぜんぶのもんだいにちょうせんしよう。';
-    }
-    try{localStorage.setItem(solvedKey,JSON.stringify(unique))}catch(e){}
+    const complete=solved.length===quizzes.length;
+    el('quizSolved').textContent=solved.length;
+    el('quizProgressBar').style.width=(solved.length/quizzes.length*100)+'%';
+    el('quizMessage').textContent=complete?'🏆 30もんぜんぶクリア！ みやぎクイズマスター！': 'あと '+(quizzes.length-solved.length)+'もん！ こたえを見るとクリアになるよ。';
+    reset.hidden=!complete;
+    next.disabled=complete;
+    save();
   }
-
-  function showQuestion(){
-    if(pos>=order.length){
-      order=shuffle([...Array(quizzes.length).keys()]);
-      pos=0;
-      try{localStorage.setItem(orderKey,JSON.stringify(order))}catch(e){}
-    }
-    const idx=order[pos], q=quizzes[idx];
-    if(qe) qe.textContent='Q'+(pos+1)+'　'+q[0];
-    if(ae){ae.textContent=q[1];ae.classList.remove('show');}
-    if(reveal) reveal.textContent='こたえを見る 👀';
-    answerShown=false;
-    progress();
+  function showQuestion(focus=false){
+    const idx=order[pos],q=quizzes[idx],special=specials[idx];
+    el('dailyAdventure').classList.toggle('is-special',!!special);
+    el('specialQuiz').hidden=!special;
+    el('specialArt').textContent=special?special.art:'';
+    qe.textContent='Q'+(pos+1)+'　'+(special?special.q:q[0]);
+    ae.textContent=special?special.a:q[1];ae.classList.remove('show');
+    reveal.textContent='こたえを見る 👀';reveal.setAttribute('aria-expanded','false');
+    answerShown=false;progress();if(focus)qe.focus({preventScroll:true});
   }
-
-  if(reveal) reveal.addEventListener('click',()=>{
-    const idx=order[pos];
-    answerShown=!answerShown;
-    if(ae) ae.classList.toggle('show',answerShown);
+  reveal.setAttribute('aria-controls','dailyAnswer');
+  reveal.addEventListener('click',()=>{
+    answerShown=!answerShown;ae.classList.toggle('show',answerShown);
     reveal.textContent=answerShown?'こたえをかくす 🙈':'こたえを見る 👀';
-    if(answerShown && !solved.includes(idx)){
-      solved.push(idx); progress();
-    }
+    reveal.setAttribute('aria-expanded',String(answerShown));
+    if(answerShown&&!solved.includes(order[pos]))solved.push(order[pos]);
+    progress();
   });
-
-  if(next) next.addEventListener('click',()=>{
-    pos++;
-    if(pos>=order.length){
-      order=shuffle([...Array(quizzes.length).keys()]);
-      pos=0;
-      try{localStorage.setItem(orderKey,JSON.stringify(order))}catch(e){}
-    }
-    try{localStorage.setItem(posKey,String(pos))}catch(e){}
-    showQuestion();
+  next.addEventListener('click',()=>{
+    if(solved.length===quizzes.length)return;
+    // Finish this order before revisiting skipped questions; never reshuffle silently.
+    let nextPos=pos+1;
+    while(nextPos<order.length&&solved.includes(order[nextPos]))nextPos++;
+    if(nextPos===order.length)nextPos=order.findIndex(id=>!solved.includes(id));
+    pos=nextPos;showQuestion(true);
   });
-
+  reset.addEventListener('click',()=>{
+    if(solved.length!==quizzes.length)return;
+    if(!window.confirm('もういちど あそぶ？\nクイズのクリアが 0 / 30 にもどり、もんだいのじゅんばんもかわるよ。\nFAMILY QUESTのバッジはそのままだよ。'))return;
+    const previous=order.join(',');
+    order=shuffle([...ids]);
+    if(order.join(',')===previous)order.push(order.shift());
+    pos=0;solved=[];showQuestion(true);
+  });
   showQuestion();
 })();
 </script>
